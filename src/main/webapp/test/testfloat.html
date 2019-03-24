@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../component/jq/jquery-1.4.4.min.js"></script>
+    <style>
+        div{
+            background: #fff0d5;
+        }
+        .right{
+            float: right;
+        }
+        .left{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>111</span>
+    <span class="right">222</span>
+</div>
+<script type="text/javascript">
+    var json = [{name:9,value:12},{name:4,value:12},{name:7,value:12}];
+    for(var i=0;i<json.length;i++){
+        for(var j=i+1;j<json.length;j++){
+            if(json[i].name>json[j].name){
+                var obj=json[i];
+                json[i]=json[j];
+                json[j]=obj;
+            }
+        }
+    }
+    debugger;
+    alert(JSON.stringify(json));
+
+    function pow(x) {
+        return x * x;
+    }
+
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+   var ss = arr.map(pow); // [1, 4, 9, 16, 25, 36, 49, 64, 81]
+//    console.log(arr);
+    function printElt(element, index, array) {
+        document.writeln("[" + index + "] is " + element + "<br />"+array);
+    }
+    [2, 5, 9].forEach(printElt);
+    debugger;
+</script>
+</body>
+</html>

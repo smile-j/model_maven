@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/iuapmobile.um.css">
+		<link rel="stylesheet" href="css/font-icons.css">
+		<link rel="stylesheet" type="text/css" href="css/iuapmobile.um.listview.css">
+		<link rel="stylesheet" href="css/approvaList.css">
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			
+			function toDetail(){
+				window.location.href = "html/staticDetail.html";
+			}
+		</script>
+		
+	</head>
+	<body>
+		<div id="win" class="um-win" style="background-color: #F7F7F7;">
+			<div id="header" class="um-header" align="center">
+				<div class="back" id="um-back" onclick="functionback()" style=" background: url(../img/close_normal3.png);background-repeat:no-repeat;background-position:center;background-size:32px 22px">
+					<!--<div id="lineS"></div>-->
+				</div>
+				<h3 style="color:#FFFFFF;">审批列表</h3>
+				<ul class="um-tabbar">
+					<li id="todoList" class="active">
+						<a>待办</a>
+					</li>
+					<li id="doneHistoryList">
+						<a>已办</a>
+					</li>
+				</ul>
+			</div>
+			<div class="um-content" style="display: none;" onclick="refreshPage()">				
+           </div>
+       
+           <div class="um-listview-wrap" id="listview"></div>	
+           		<ul id="aaa" class="um-list um-no-active">
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+
+					<li class="um-listview-row" id="lists" onclick="toDetail();">
+						<div id="line"></div>
+						<div id="listid" data-bind="text:TaskName">股份有限公司部门发文</div>
+						<div id="listtitle" data-bind="text:Title">测试发文</div>
+						<div id="out">
+							<div id="listhead" data-bind="text:StepName">会签
+							</div>
+						</div>
+						<div id="listtime" data-bind="text:ArriveTime">17-05-10 14:22
+						</div>
+					</li>
+				</ul>
+           </div>
+				
+		    <div>
+			
+		</div>
+	</body>
+</html>
+
