@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0 minimum-scale=1, maximum-scale=1">
+	<meta charset="UTF-8">
+	<title>详情</title>
+	<link rel="stylesheet" type="text/css" href="../css/newDetail.css">
+	<link rel="stylesheet" href="../css/iscroll.css" /> 
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/summer.js" ></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/rem.js"></script>
+	<script type="text/javascript" src="../js/doT.min.js"></script>
+	<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+	<script src="../js/iscroll.js"></script>
+	<script type="text/javascript" src="../js/translate.js"></script>
+	
+	<script type="text/javascript">
+		var parentId;
+		$().ready(function(){
+			$("#paper").on("click",paper);
+			$("#files").on("click",files);
+			$("#details").on("click",details);
+
+			var first = $("#second li:first-child");
+			first.addClass("hit");
+			$("#second li").on("click",function(){
+				$(this).css({"background-color": "#175499",color: "#FFF"});
+				$(this).siblings().css({"background-color": "#FFF",color: "#337AB7"});
+			});
+
+			
+			$("#backArr").on("click",function(){
+				$(".paper").css("display","block");
+				$("#second").css("display","block");
+				$("#btns").css("display","block");
+				$("#forms").css("display","none");
+				$("#qt").css("display","none");
+			});
+
+			$("#next").on("click",function(){
+				$("#container").css("display","none");
+				$("#form-win").css("display","block");
+			});
+			$("#redirect").on("click",function(){
+				$("#container").css("display","none");
+				$("#form-win").css("display","block");
+			});
+			$("#showDetail").on("click",function(){
+				$("#container").css("display","block");
+				$("#form-win").css("display","none");
+			});
+			
+			$("#yes").on("click",function(){
+				var checkeds = $("input[type='checkbox']:checked");
+				var depts = [];
+				$.each(checkeds,function(i, ele){
+					var deptname = $(ele).siblings(".um-black").html();
+					depts.push(deptname);
+					console.log(deptname);
+				});
+				$("#"+parentId+" > p:nth-child(2)").html(depts.join(", "));
+				$("#fade").css("display","none");
+				$("#light").css("display","none");
+
+			});
+			$("#no").on("click",function(){
+				$("#fade").css("display","none");
+				$("#light").css("display","none");
+			});
+
+			$(".paper").css("display","block");
+			$(".attachments").css("display","none");
+			$(".details").css("display","none");
+
+			var signData = [
+						{itemName:'计划财务部'},
+						{itemName:'风险管理部'},
+						{itemName:'资金财务部'}
+					];
+			var emergencyData = [
+				{itemName:'普通'},
+				{itemName:'急件'},
+				{itemName:'特急'}
+			];
+			var encryptData = [
+				{itemName:'普通'},
+				{itemName:'秘密'},
+				{itemName:'机密'},
+				{itemName:'绝密'},
+				{itemName:'商密一级'},
+				{itemName:'商密二级'},
+				{itemName:'商密三级'}
+			];
+			var typeData =  [
+				{itemName:'华融科技'},
+				{itemName:'会议纪要'},
+			];
+			$("#pickDept").on("click",signData,pickDept);
+			$("#enptry").on("click",encryptData,pickDept);
+			$("#emgencry").on("click",emergencyData,pickDept);
+			$("#typeData").on("click",typeData ,pickDept);
+
+			var detailsArray = translate(data);
+			var arrText = doT.template($("#paperScript").text());
+			$("#paperList").html(arrText(detailsArray));
+		});
+		function paper(argument) {
+			$(".paper").css("display","block");
+			$(".attachments").css("display","none");
+			$(".details").css("display","none");
+		}
+
+		function files(){
+			$(".paper").css("display","none");
+			$(".attachments").css("display","block");
+			$(".details").css("display","none");
+		}
+
+		function details(){
+			$(".paper").css("display","none");
+			$(".attachments").css("display","none");
+			$(".details").css("display","block");
+		}
+
+		function pickDept(event){
+			var data = event.data;
+			var arrText = doT.template($("#pickItem").text());
+			$("#items").html(arrText(data));
+			parentId = $(this).attr("id");
+			$("#fade").css("display","block");
+			$("#light").css("display","block");
+		}
+		function backToIndex(){
+	 		window.location.href = "../index.html?approvalState="+state;
+	 	}
+
+	 	function showForm(){
+	 		
+	 	}
+	 	function hideForm(){
+	 		$(".paper").css("display","block");
+			$("#second").css("display","block");
+			$("#forms").css("display","none");
+	 	}
+	 	function toPickDealer(){
+	 		window.location.href = "pickDealer.html";
+	 	}
+	 	function showBlcok(id){
+	 		$("#"+id).css("display","block");
+	 	}
+	 	function hideBlcok(id){
+	 		$("#"+id).css("display","none");
+	 	}
+	</script>
+</head>
+<body>
+	<div class="container" id="container" >
+		<div class="top">
+			<div class="title_area">
+				<a class="backArr" id="backArr">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title">股份有限公司签报</h3>
+			</div>
+			<div class="second" id="second">
+				<ul id="second">
+					<li id="paper">稿纸</li>
+					<li id="files">附件</li>
+					<li id="details">流转明细</li>
+				</ul>
+			</div>
+		</div>
+		
+
+		<!-- 稿纸页签 -->
+		<div class="paper">
+			<div class="fname" id="fname">
+				关于印发《xxx会计审核办法文件》(A版)的重要通知
+			</div>
+
+			<div class="content">
+				<ul id="paperList">
+				</ul>
+			</div>
+		</div>
+
+		
+		<div class="btns" id="btns">
+			<button id="next" style="width: 50%">下一步</button>
+			<button id="redirect" style="width: 50%">转拟稿人</button>
+		</div>
+		
+		<!-- 附件页签 -->
+		<div class="attachments">
+			<div class="files" style="padding-left: 0">
+				<ul class="fileList" id="fileList">
+					<div class="fileType">正文</div>
+					<li><img src="../img/doc.png" width="36px" height="36px">移动审批APP</li>
+					<li><img src="../img/pdf.png" width="36px" height="36px">流程图</li>
+					<div class="fileType">附件</div>
+					<li><img src="../img/ppt.png" width="36px" height="36px">公司规章制度</li>
+					<li><img src="../img/rar.png" width="36px" height="36px">资产审核办法</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- 流转明细 -->
+		<div class="details">
+			<ul id="detailsList">
+				<li class="mingxi-list">
+					<div class="mingxi-title">会签</div>
+						<div class="mingxi-content">
+							<div class="mingxi-content-left">
+								<div class="mingxi-content-img">
+									<img src="../img/tx1.png"/>
+								</div>
+							</div>
+							<div class="mingxi-content-middle">
+								<p class="mingxi-content-head">李青</p>
+								<p class="mingxi-content-time">任务到达时间：17-4-5 13:22</p>
+								<p class="mingxi-content-time">任务到达时间：17-4-5 13:22</p>
+							</div>
+							<div class="mingxi-content-right">
+							<div class="mingxi-content-status unreceive">已完成</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="form-win" id="form-win" style="display: none">
+		<div class="title_area">
+			<a class="backArr"  id="showDetail">
+				<img src="../img/fanhui_normal.png" width="28px" height="22px">
+			</a>
+			<h3 class="title" id="title">股份有限公司签报</h3>
+		</div>
+
+		<!-- 表单 -->
+		<div class="forms" id="forms">
+			<form id="mt4373">
+				<div id="typeData">
+					<p class="fl">公文待字</p>
+					<p class="fr arrow">华融科技</p>
+				</div>
+				<div>
+					<p class="fl">公文年号</p>
+					<input class="fr scan rightSpace" type="text" name="" value="2017">
+				</div>
+				<div id="emgencry">
+					<p class="fl">缓急</p>
+					<p class="fr arrow">普通</p>
+				</div>
+				<div id="enptry">
+					<p class="fl">密级</p>
+					<p class="fr arrow">普通</p>
+				</div>
+				<div>
+					<p class="fl">主送</p>
+					<input class="fr scan rightSpace" type="text" name="" placeholder="请输入内容">
+				</div>
+				<div>
+					<p class="fl">抄送</p>
+					<input class="fr scan rightSpace" type="text" name="" placeholder="请输入内容">
+				</div>
+				<div>
+					<p class="fl">抄报</p>
+					<input class="fr scan rightSpace" type="text" name="" placeholder="请输入内容">
+				</div>
+				<div>
+					<p class="fl">公司内发送</p>
+					<input class="fr scan rightSpace" type="text" name="" placeholder="请输入内容">
+				</div>
+				<div>
+					<p class="fl">主题词</p>
+					<input class="fr scan rightSpace" type="text" name="" placeholder="请输入内容">
+				</div>
+				<div>
+					<p class="fl">主办部门领导</p>
+					<p class="fr arrow">杨国兵</p>
+				</div>
+				<div>
+					<p class="fl">处室负责人</p>
+					<p class="fr arrow">黄付才</p>
+				</div>
+				<div>
+					<p class="fl">是否会签</p>
+					<div class="fr singlePick">
+						<label for="rd1">
+							需要会签
+							<input type="radio" id="rd1" name="xx" checked onchange="showBlcok('pickDept');">
+						</label>
+						<label for="rd2">
+							不需要会签
+							<input type="radio" id="rd2" name="xx" checked onchange="hideBlcok('pickDept');">
+						</label>
+					</div>
+				</div>
+				<div id="pickDept">
+					<p class="fl">会签单位</p>
+					<p class="fr arrow">计划财务部</p>
+				</div>
+			</form>
+		</div>
+
+		<!-- 单选弹框 --> 
+		<div id="fade" class="black_overlay"> 
+			<div id="light" class="white_content"> 
+				<ul id="argsul" class="argsul">
+					<li id="items">
+						
+					</li>
+				</ul>
+				<div class="argsbtn">
+					<button class="confirm" id="yes" >确定</button>
+					<button class="cancel"  id="no" >取消</button>
+				</div>
+			</div> 
+		</div>
+
+		<div class="btns" id="qt">
+			<button style="width:100%" onclick="toPickDealer();">确定</button>
+		</div>
+	</div>
+	<script id="pickItem" type="text/x-dot-template">
+	    {{ for (var i=0;i<it.length;i++ ){ }}
+	    	<div class="um-check-group um-check-group-left">	
+				<label class="um-check-group-item">
+					<input type="checkbox" class="boxPick" name="n">
+					<span class="um-icon-ISO um-vc-ISO"></span>
+					<span class="um-black">{{=it[i].itemName}}</span>
+				</label>
+			</div>
+	 	{{ } }}
+	</script>
+	<script id="paperScript" type="text/x-dot-template">
+	    {{ for (var i=0;i<it.length;i++ ){ }}
+	    	<li>
+				<p class="fl">{{=it[i].name}}</p>
+				<p class="fr">{{=it[i].value}}</p>
+			</li>
+	 	{{ } }}
+	</script>
+</body>
+</html>

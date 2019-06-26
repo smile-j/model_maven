@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0 minimum-scale=1, maximum-scale=1">
+	<meta charset="UTF-8">
+	<title>详情</title>
+	<link rel="stylesheet" type="text/css" href="../css/cssreset.css">
+	<link rel="stylesheet" type="text/css" href="../css/detail437.css">
+	<link rel="stylesheet" type="text/css" href="../css/wheelpicker.min.css">
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/summer.js" ></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/wheelpicker.min.js"></script>
+	<script type="text/javascript" src="../js/cvi_busy_lib.js" ></script>
+	<script type="text/javascript" src="../js/rem.js"></script>
+	<script type="text/javascript" src="../js/doT.min.js"></script>
+	<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+	<script type="text/javascript" src="../js/layer_mobile/layer.js" ></script>
+	<script type="text/javascript" src="../js/appSettings.js"></script>
+	<script type="text/javascript" src="../js/translate.js"></script>
+	<script type="text/javascript" src="../js/vue/vue.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mobileAjax.js"></script>
+	<script type="text/javascript" src="../js/detail437.js"></script>
+
+</head>
+<body>
+<div id="app">
+	<div class="container" id="container" v-show="pageSwitch.detail">
+		<div class="top">
+			<div class="title_area">
+				<a class="backArr" id="backArr" href="../index.html">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title"></h3>
+			</div>
+			<div class="second">
+				<ul id="second">
+					<li id="paper"  @click="paper">稿纸</li>
+					<li id="files" @click="files">附件</li>
+					<li id="details" @click="transInfo">流转明细</li>
+				</ul>
+			</div>
+		</div>
+		
+
+		<!-- 稿纸页签 -->
+		<div class="paper" error="hide" v-show="tabSwitch.paper">
+			<div class="fname" id="fname">
+				{{context.DocTitle}}
+			</div>
+
+			<div class="content">
+				<ul id="paperList">
+					<li v-if="!isUndefine(context.DocCharName)">
+						<p class="fl">公文待字</p>
+						<p class="fr">{{context.DocCharName}}</p>
+					</li>
+					<li v-if="!isUndefine(context.DocYear)">
+						<p class="fl">公文年号</p>
+						<p class="fr">{{context.DocYear}}</p>
+					</li>
+					<li v-if="!isUndefine(context.DocNum)">
+						<p class="fl">公文号</p>
+						<p class="fr">{{context.DocNum}}</p>
+					</li>
+					<li v-if="!isUndefine(context.Emergency)">
+						<p class="fl">缓急</p>
+						<p class="fr">{{context.Emergency}}</p>
+					</li>
+					<li v-if="!isUndefine(context.Encrypt)">
+						<p class="fl">密级</p>
+						<p class="fr">{{context.Encrypt}}</p>
+					</li>
+					<li v-if="!isUndefine(context.Ct_LeaderName)">
+						<p class="fl">主办部门领导</p>
+						<p class="fr">{{context.Ct_LeaderName}}</p>
+					</li>
+					<li v-if="!isUndefine(context.LeaderSignInfo)" v-for="item in context.LeaderSignInfo">
+						<p class="fl">签发</p>
+						<p class="fr">{{ item.UserName+'('+item.SignDate+'): '+item.SignMemo}}</p>
+					</li>
+					<li v-if="!isUndefine(context.SignInfo)" v-for="item in context.SignInfo">
+						<p class="fl">{{item.DeptName}}</p>
+						<p class="fr">{{ item.SignContent+'('+item.UserName+item.SignDate+')'}}</p>
+					</li>
+					<li v-if="!isUndefine(context.MainSend)">
+						<p class="fl">主送</p>
+						<p class="fr">{{context.MainSend}}</p>
+					</li>
+					<li v-if="!isUndefine(context.LeaderSend)">
+						<p class="fl">抄报</p>
+						<p class="fr">{{context.LeaderSend}}</p>
+					</li>
+					<li v-if="!isUndefine(context.CopySend)">
+						<p class="fl">抄送</p>
+						<p class="fr">{{context.CopySend}}</p>
+					</li>
+					<li v-if="!isUndefine(context.InternalSend)">
+						<p class="fl">公司内发送</p>
+						<p class="fr">{{context.InternalSend}}</p>
+					</li>
+					<li v-if="!isUndefine(context.DepartmentName)">
+						<p class="fl">主办单位</p>
+						<p class="fr">{{context.DepartmentName}}</p>
+					</li>
+					<li v-if="!isUndefine(context.AuthorName)">
+						<p class="fl">拟稿人</p>
+						<p class="fr">{{context.AuthorName}}</p>
+					</li>
+					<li v-if="!isUndefine(context.AuthorTel)">
+						<p class="fl">拟稿人电话</p>
+						<p class="fr">{{context.AuthorTel}}</p>
+					</li>
+					<li v-if="!isUndefine(context.Ct_ManagerName)">
+						<p class="fl">处室负责人</p>
+						<p class="fr">{{context.Ct_ManagerName}}</p>
+					</li>
+					<li v-if="!isUndefine(context.CheckInfo)" v-for="item in context.CheckInfo">
+						<p class="fl">{{item.MessageType | translateCheck}}</p>
+						<p class="fr">{{item.UserName+'('+item.WriteDate+')'}}</p>
+					</li>
+					<li v-if="!isUndefine(context.Subject)">
+						<p class="fl">主题词</p>
+						<p class="fr">{{context.Subject}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+		<div v-if="actions.length > 0" error="hide" class="btns" id="btns" style="display: none" v-show="tabSwitch.paper">
+			<button v-for="(item,index) in actions" v-bind:style="calc(index)" @click="goToForm(item)">{{item.Name}}</button>
+		</div>
+
+		<!-- 附件页签 -->
+		<div class="attachments" error="hide" v-show="tabSwitch.files">
+			<div class="files" style="padding-left: 0">
+				<ul class="fileList" id="fileList">
+					<li v-for="(item,index) in attachments">
+						<div class="fileType">{{item.FileFlag}}</div>
+						<div class="outer-box" @click="download(item)" >
+							<div class="file-content">
+								<div class="file-icon">
+									<img v-bind:src="item.FileExt | fileIcon" width="36px" height="36px">
+								</div>
+								<div class="file-title">
+									<span>{{item.Title}}</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- 流转明细 -->
+		<div class="details" error="hide" v-show="tabSwitch.transDetail">
+			<ul id="detailsList">
+				<li class="mingxi-list" v-for="item in details">
+					<div class="mingxi-title">{{item.StepName}}</div>
+						<div class="mingxi-content">
+							<div class="mingxi-content-left">
+								<div class="mingxi-content-img">
+									<img src="../img/tx1.png"/>
+								</div>
+							</div>
+							<div class="mingxi-content-middle">
+								<p class="mingxi-content-head">{{item.UserName}}</p>
+								<p class="mingxi-content-time">任务到达时间：{{item.ArriveTime | formatDate}}</p>
+								<p v-if="item.Status != '未接收'" class="mingxi-content-time">任务接收时间：{{item.AcceptTime | formatDate}}</p>
+							</div>
+							<div class="mingxi-content-right">
+
+							<div v-if="item.Status=='办理中'" v-bind:class="[normal,handle]">
+								办理中
+							</div>
+							<div v-else-if="item.Status=='未接收'" v-bind:class="[normal,unget]">未接收</div>
+							<div v-else-if="item.Status=='已完成'" v-bind:class="[normal]">
+								<img v- src='../img/finished.png'/>
+							</div>
+							
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 表单 -->
+	<div class="forms" error="hide" id="forms" v-if="!isUndefine(components)">
+		<div class="form-page" id="form-page" v-show="pageSwitch.form">
+			<div class="title_area form-title">
+				<a class="backArr"  @click="backDetail()">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title"></h3>
+			</div>
+		
+			<div class="fname" id="fname" style="margin-top: 1.34rem;">
+				{{context.DocTitle}}
+			</div>
+			<form class="model-473" id="model-473">
+				<div class="top-group left-space">
+					<div class="select-row" v-if="components.docChar" v-on:click.capture="pickDocChar($event,'docChar')">
+						<p class="fl">公文待字</p>
+						<input type="hidden" name="DocChar" v-bind:value="context.DocChar">
+						<p class="fr arrow">{{context.DocCharName}}</p>
+					</div>
+					<div class="select-row" v-if="components.docYear" v-on:click.capture="pickDocYear($event,'docYear')">
+						<p class="fl">公文年号</p>
+						<input type="hidden" name="DocYear" v-bind:value="context.DocYear">
+						<p class="fr arrow">{{context.DocYear}}</p>
+					</div>
+					<div class="select-row" id="emergency" v-if="components.emergency" v-on:click.capture="pickEmergency($event,'emergency')">
+						<p class="fl">缓急</p>
+						<input type="hidden" name="Emergency" v-bind:value="context.Emergency">
+						<p class="fr arrow">{{context.Emergency}}</p>
+					</div>
+					<div class="select-row" v-if="components.encrypt" v-on:click.capture="pickEncrypt($event,'encrypt')">
+						<p class="fl">密级</p>
+						<input type="hidden" name="Encrypt" v-bind:value="context.Encrypt">
+						<p class="fr arrow">{{context.Encrypt}}</p>
+					</div>
+				</div>
+				<div class="select-row left-space bb" @click="pickStaff('Ct_LeaderName')" v-if="components.leader">
+					<p class="fl">主办部门领导</p>
+					<input type="hidden" name="Ct_LeaderName" v-bind:value="context.Ct_LeaderName" put="name">
+					<input type="hidden" name="Ct_LeaderID" v-bind:value="context.Ct_LeaderID" put="id">
+					<p class="fr arrow" v-bind:class="hitLeader" id="Ct_LeaderName" v-bind:uid="context.Ct_LeaderID" v-bind:style="context.Ct_LeaderName | grayColor">{{context.Ct_LeaderName | plsPick('主办部门领导')}}</p>
+				</div>
+				<div class="select-row left-space bb" @click="pickStaff('Ct_ManagerName')" v-if="components.manager">
+					<p class="fl">处室负责人</p>
+					<input type="hidden" name="Ct_ManagerName" v-bind:value="context.Ct_ManagerName" put="name">
+					<input type="hidden" name="Ct_ManagerID" v-bind:value="context.Ct_ManagerID" put="id">
+					<p class="fr arrow" id="Ct_ManagerName" v-bind:class="hitManager" v-bind:uid="context.Ct_ManagerID" v-bind:style="context.Ct_ManagerName | grayColor">{{context.Ct_ManagerName | plsPick('处室负责人')}}</p>
+				</div>
+				<div class="meet-add" v-if="components.meeting">
+					<div class="nedd-sign">
+						<div class="um-check-group um-check-group-left">	
+							<label class="um-check-group-item">
+								<input type="radio" class="boxPick" v-bind:checked="!checkSign" name="Ct_CSign" value="N" 
+								v-on:change="noNeed">
+								<span class="um-icon-ISO um-vc-ISO"></span>
+								<span class="um-black">不需要会签</span>
+							</label>
+						</div>
+						<div class="um-check-group um-check-group-left">	
+							<label class="um-check-group-item">
+								<input type="radio" id="Ct_CSign" class="boxPick" name="Ct_CSign" value="Y" v-bind:checked="checkSign" v-on:change="yesNeed">
+								<span class="um-icon-ISO um-vc-ISO"></span>
+								<span class="um-black">需要会签</span>
+							</label>
+						</div>
+					</div>
+					<div class="pickedDept" id="pickedDept" v-show="checkSign">
+						<div class="select-row left-space bb" @click="pickDept" >
+							<p class="fl">请选择会签单位</p>
+							<p class="fr arrow"></p>
+						</div>
+						<div v-show="showPicked">
+							<div class="select-row left-space bb" v-for="item in pickedDepts">
+								<p class="fl" style="color:#337AB7;">{{item.dept}}</p>
+							</div>
+						</div>
+						<input type="hidden" name="Ct_SignDeptName" v-bind:value="pickedInput.deptname">
+						<input type="hidden" name="Ct_SignDeptID" v-bind:value="pickedInput.userId">
+						<input type="hidden" name="Ct_SignDeptIDReal" v-bind:value="pickedInput.deptId">
+					</div>
+				</div>
+				<!-- S=增加会签-->
+				<div class="meet-add" v-if="components.addSign">
+					<div class="nedd-sign">
+						<div class="um-check-group um-check-group-left">	
+							<label class="um-check-group-item">
+								<input type="radio" class="boxPick" name="Ct_CAddSign" value="N" checked="checked" v-on:change="noNeed">
+								<span class="um-icon-ISO um-vc-ISO"></span>
+								<span class="um-black">交部门领导签发</span>
+							</label>
+						</div>
+						<div class="um-check-group um-check-group-left">	
+							<label class="um-check-group-item">
+								<input type="radio" id="Ct_CAddSign" class="boxPick" name="Ct_CAddSign" value="Y" v-on:change="yesNeed">
+								<span class="um-icon-ISO um-vc-ISO"></span>
+								<span class="um-black">增加会签</span>
+							</label>
+						</div>
+					</div>
+					<div class="pickedDept" id="pickedDept" v-show="showAddPicked">
+						<div class="select-row left-space bb" @click="pickDept('add')">
+							<p class="fl">请选择会签单位</p>
+							<p class="fr arrow"></p>
+						</div>
+						<div class="select-row left-space bb" v-for="item in pickedDepts">
+							<p class="fl" style="color:#337AB7;">{{item.dept}}</p>
+						</div>
+						<input type="hidden" name="Ct_SignDeptName" v-bind:value="addPickedInput.deptname">
+						<input type="hidden" name="Ct_SignDeptID" v-bind:value="addPickedInput.userId">
+						<input type="hidden" name="Ct_SignDeptIDReal" v-bind:value="addPickedInput.deptId">
+					</div>
+				</div>
+				<!-- E=增加会签-->
+				<div class="header">
+					<div class="text-input" v-if="components.mainSend">
+						<p class="input-name">主送</p>
+						<textarea class="scanner" name="MainSend" placeholder="请输入主送内容">{{context.MainSend}}</textarea>
+					</div>
+					<div class="text-input" v-if="components.leaderSend">
+						<p class="input-name">抄报</p>
+						<textarea class="scanner" name="LeaderSend" placeholder="请输入抄报内容">{{context.LeaderSend}}</textarea>
+					</div>
+					<div class="text-input" v-if="components.copySend">
+						<p class="input-name">抄送</p>
+						<textarea class="scanner" name="CopySend" placeholder="请输入抄送内容">{{context.CopySend}}</textarea>
+					</div>
+					<div class="text-input" v-if="components.innserSend">
+						<p class="input-name">公司内发送</p>
+						<textarea class="scanner" name="InternalSend" placeholder="请输入公司内发送内容">{{context.InternalSend}}</textarea>
+					</div>
+					<div class="text-input" v-if="components.subject">
+						<p class="input-name">主题词</p>
+						<textarea class="scanner" name="Subject" placeholder="请输入主题词">{{context.Subject}}</textarea>
+					</div>
+					<div class="text-input" v-show="components.signContent">
+						<p class="input-name">会签意见</p>
+						<textarea class="scanner" name="SignContent" maxlength="10" placeholder="请输入会签意见(最多填10个字) ...">{{context.SignContent}}</textarea>
+					</div>
+					<div class="text-input" v-if="components.signMemo">
+						<p class="input-name">签发意见</p>
+						<textarea class="scanner" name="SignMemo" placeholder="请输入签发意见">同意</textarea>
+					</div>
+				</div>
+			</form>
+			<div class="btns">
+				<button style="width: 100%" @click="toPickDealer()">下一步</button>
+			</div>
+		</div>
+		<div class="meeting-sign" id="meeting-sign" v-show="pageSwitch.meeting">
+			<div class="title_area form-title">
+				<a class="backArr"  @click="backForm">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title"></h3>
+			</div>
+			<div class="meeting-depts left-space">
+				<ul class="depts" id="depts">
+					<li class="dept-row" v-for="(item,index) in departments" v-on:click.stop="beChecked($event)">
+						<p>{{item.DeptName}}</p>
+						<span>{{item.UserName}}</span>
+						<input type="hidden" name="Ct_SignDeptID" v-bind:value="item.UserID">
+						<input type="hidden" name="Ct_SignDeptIDReal" v-bind:value="item.DeptID">
+						<input class="meet-check" v-bind:id="'check' + index" type="checkbox" v-bind:value="item.DeptName" v-bind:uid="item.UserID" v-bind:did="item.DeptID" v-bind:checked="checkedStatus(item.DeptID)">
+						<label class="check-box" v-bind:for="'check' + index">
+							<span class="allright"></span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="btns" id="btns">
+				<button style="width: 100%" @click="afterPickDept()">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

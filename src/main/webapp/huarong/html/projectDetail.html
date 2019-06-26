@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0 minimum-scale=1, maximum-scale=1">
+		<meta charset="UTF-8">
+		<title>项目立项</title>
+
+		<link rel="stylesheet" type="text/css" href="../css/iscroll.css">
+		<link rel="stylesheet" type="text/css" href="../css/projectDetail.css">
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/summer.js" ></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/cvi_busy_lib.js" ></script>
+		<script type="text/javascript" src="../js/rem.js"></script>
+		<script type="text/javascript" src="../js/doT.min.js"></script>
+		<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+		<script type="text/javascript" src="../js/layer_mobile/layer.js" ></script>
+		<script type="text/javascript" src="../font/iscroll.js"></script>
+		<script type="text/javascript" src="../js/appSettings.js"></script>
+		<script type="text/javascript" src="../js/translate.js"></script>
+		<script type="text/javascript" src="../js/vue/vue.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.mobileAjax.js"></script>
+		<script type="text/javascript" src="../js/projectDetail.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div class="container" id="container" v-show="pageSwitch.detail" >
+				<div class="top">
+					<div class="title_area">
+						<a class="backArr" id="backArr" href="../index.html"> <img src="../img/fanhui_normal.png" width="28px" height="22px"> </a>
+						<h3 class="title" id="title"></h3>
+					</div>
+					<div class="second" id="second">
+						<ul id="second">
+							<li id="paper"  @click="paper">
+								项目基本信息
+							</li>
+							<li id="files" @click="files">
+								附件
+							</li>
+							<li id="details" @click="transInfo">
+								流转明细
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 项目基本信息 -->
+				
+				<div class="paper" v-show="tabSwitch.paper">
+					<div>
+						<p class="com-lh-h clearfix" v-for="(item,index) in formInfo" v-show="index==6">
+							<span class="common-font c6 fl">{{item.Name}}</span>
+							<span class="common-font c3 fr m-r15">{{item.Value}}</span>
+						</p>
+						<div class="splitter"></div>
+						<div>
+							<h2 class="common-font c6 com-lh-h border-b">项目基本信息：</h2>
+							<ul>
+								<li class="common-font c3 com-lh-h border-b" v-for="(item,index) in formInfo" v-show="index>=2 && index<=5">
+									{{item.Name}}：{{item.Value | toArrow}}
+								</li>
+							</ul>
+						</div>
+						<div class="splitter"></div>
+						<div class="reset" id="showHide">
+							<h2 class="common-font c6 com-lh-h">分公司立项审查:</h2>
+							<ul>
+								<li>
+									<h2 class="common-font c3 com-lh-h pr" @click="showHide"> 分公司部门负责人审核意见： <i class="up-arrow pa" v-show="opinion.partment" ></i><i v-show="!opinion.partment" class="up-arrow pa down-arrow" ></i></h2>
+									<div class="clearfix com-lh-h bgf7" v-show="opinion.partment">
+										<p class="common-font c6 fl ">
+											建议通过立项
+										</p>
+										<p class="common-font c6 fr m-r15 ">
+											张铁军 2017-05-07
+										</p>
+									</div>
+								</li>
+								<li>
+									<h2 class="common-font c3 com-lh-h pr" @click="showHide2"> 法律审核意见： <i class="up-arrow pa" v-show="opinion.law"></i><i class="up-arrow pa down-arrow" v-show="!opinion.law"></i></h2>
+									
+									<div v-show="opinion.law">
+										<div class="clearfix com-lh-h bgf7 pr law-sug" >
+											<p class="common-font c6 fl ">
+												通过
+											</p>
+											<i class="pa blue-right"></i>
+											<p class="common-font c6 fr m-r15 ">
+												张铁军 2017-05-07
+											</p>
+										</div>
+										<div class="clearfix com-lh-h bgf7 pr law-sug" >
+											<p class="common-font c6 fl ">
+												不需要业务部门完善立项
+											</p>
+										</div>
+
+									</div>
+								</li>
+
+								<li>
+									<h2 class="common-font c3 com-lh-h pr" @click="showHide3"> 业务审查意见： <i class="up-arrow pa" v-show="opinion.bussiness"></i><i v-show="!opinion.bussiness" class="up-arrow pa down-arrow" ></i></h2>
+									<div v-show="opinion.bussiness">
+									<div class="clearfix com-lh-h bgf7 pr law-sug" >
+										<p class="common-font c6 fl ">
+											同意
+										</p>
+										<i class="pa blue-right"></i>
+										<p class="common-font c6 fr m-r15 ">
+											王传明 2017-05-07
+										</p>
+									</div>
+									<div class="clearfix com-lh-h bgf7 pr law-sug" >
+										<p class="common-font c6 fl ">
+											同意
+										</p>
+										<i class="pa blue-right"></i>
+										<p class="common-font c6 fr m-r15 ">
+											胡益辉 2017-05-07
+										</p>
+									</div>
+									<div class="clearfix com-lh-h bgf7 pr law-sug">
+										<p class="common-font c6 fl ">
+											需要业务部门完善立项
+										</p>
+
+									</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- 按钮 -->
+				
+				<div v-if="actions.length > 0" class="btns" id="btns">
+					<button v-for="(item,index) in actions" v-bind:style="calc(index)" @click="goToForm(item)">
+						{{item.Name}}
+					</button>
+				</div>
+				<!-- 附件页签 -->
+				<div class="attachments" error="hide" v-show="tabSwitch.files">
+					<div class="files" style="padding-left: 0">
+						<ul class="fileList" id="fileList">
+							<li v-for="(item,index) in attachments">
+								<div class="fileType">
+									{{item.FileFlag}}
+								</div>
+								<div class="outer-box" @click="download(item)" >
+									<div>
+										<img v-bind:src="item.FileExt | fileIcon" width="36px" height="36px">
+										{{item.Title}}
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 流转明细 -->
+				<div class="details" error="hide" v-show="tabSwitch.transDetail">
+					<ul id="detailsList">
+						<li class="mingxi-list" v-for="item in details">
+							<div class="mingxi-title">
+								{{item.StepName}}
+							</div>
+							<div class="mingxi-content">
+								<div class="mingxi-content-left">
+									<div class="mingxi-content-img">
+										<img src="../img/tx1.png"/>
+									</div>
+								</div>
+								<div class="mingxi-content-middle">
+									<p class="mingxi-content-head">
+										{{item.UserName}}
+									</p>
+									<p class="mingxi-content-time">
+										任务到达时间：{{item.ArriveTime | formatDate}}
+									</p>
+									<p v-if="item.Status != '未接收'" class="mingxi-content-time">
+										任务接收时间：{{item.AcceptTime | formatDate}}
+									</p>
+								</div>
+								<div class="mingxi-content-right">
+
+									<div v-if="item.Status=='办理中'" v-bind:class="[normal,handle]">
+										办理中
+									</div>
+									<div v-else-if="item.Status=='未接收'" v-bind:class="[normal,unget]">
+										未接收
+									</div>
+									<div v-else-if="item.Status=='已完成'" v-bind:class="[normal]">
+										<img v- src='../img/finished.png'/>
+									</div>
+
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

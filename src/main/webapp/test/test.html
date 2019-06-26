@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../component/jq/jquery-1.4.4.min.js"></script>
+</head>
+<body>
+<table>
+    <tr>
+        <input value="111" type="hidden" name="name">
+        <input value="111" type="hidden" name="age">
+    </tr>
+    <tr>
+        <input value="222" type="hidden" name="name">
+        <input value="22" type="hidden" name="age">
+    </tr>
+    <tr>
+        <input value="333" type="hidden" name="name">
+        <input value="33" type="hidden" name="age">
+        <p id="pp">哈哈</p>
+        <button id="sibings">hhh</button>
+    </tr>
+</table>
+<script type="text/javascript">
+
+    $('#sibings').click(()=>{
+        var obj =  $('#sibings');
+        debugger;
+
+    });
+    function as(){
+        a = 6;
+        alert(window.a);
+        var a = 10;
+        alert(a);
+    }
+    a = 5;
+    as();
+    debugger;
+    var trs = $('tr').map(function(){
+             return{
+                 name:$(this).find('[name=name]').val(),
+                 age:$(this).find('[name=age]').val()
+             }
+            }).get();
+    var trs2 = $('tr').map(function(){
+        return{
+            name:$(this).find('[name=name]').val(),
+            age:$(this).find('[name=age]').val()
+        }
+    });
+    Array.prototype.myMap=function(callback){
+        context =  window;
+//        if('myMap' in Array.prototye) {
+//            return this.map(callback,context);
+//        }
+        var newAry = [];
+        for(var i = 0,len = this.length; i < len;i++) {
+            if(typeof callback === 'function') {
+                var val = callback.call(context,this[i],i,this);
+                newAry[newAry.length] = val;
+            }
+        }
+        return newAry;
+    }
+    debugger;
+    var persons =[{name:'qq',age:21},{name:'ww',age:23}];
+    var ss = persons.myMap(function(e){
+        return{
+            aa:'1'
+        }
+    })
+    debugger
+</script>
+</body>
+</html>

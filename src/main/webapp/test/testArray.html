@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../component/jq/jquery-1.4.4.min.js"></script>
+</head>
+<style type="text/css">
+    .moni-button{
+        width: 160px;
+        height: 30px;
+        box-shadow: #026c7a;
+        cursor:pointer;
+        background-color: #00b3ee;
+    }
+</style>
+<body>
+<form id="sb">
+    <input type="checkbox" name="aa1" value="11">
+    <input type="checkbox" name="aa2" value="22" checked readonly="true">
+    <input type="checkbox" name="aa3" value="33">
+    <input name="name" type="text" readonly value="张三">
+    <input name="age" type="text" value="11" disabled>
+    <select name="like" readonly="true  ">
+        <option value="111">1</option>
+        <option value="222" selected>2</option>
+        <option value="333">3</option>
+    </select>
+    <select id="_enum_num1" name="type" enumValue="cc">
+    </select>
+    <input type="button" onclick="getData()">
+</form>
+<table id="table">
+    <tr>
+        <td><input name="name" type="text"></td>
+        <td><input name="age" type="text"></td>
+        <td><input name="add" type="text"></td>
+    </tr>
+    <tr>
+        <td><input name="name" type="text"></td>
+        <td><input name="age" type="text"></td>
+        <td><input name="add" type="text"></td>
+    </tr>
+    <tr>
+        <td><input name="name" type="text"></td>
+        <td><input name="age" type="text"></td>
+        <td><input name="add" type="text"></td>
+    </tr>
+</table>
+<div class="moni-button" onclick="show()">提交table数据</div>
+<script type="text/javascript">
+    (function(){
+        var options =[
+            {value:'紧急',code:'aa'},
+            {value:'一般',code:'bb'},
+            {value:'重要',code:'cc'}
+        ];
+//        for(var i=0;i<options.length;i++){
+//            var obj=options[i];
+//            document.getElementById("_enum_num1").options.add(new Option(obj.value, obj.code));
+//        }
+        var __select_value = $('#_enum_num1').attr('enumValue');
+        for (var i=0;i<options.length;i++) {
+            var emunEntity = options[i];
+            if (emunEntity.code == __select_value) {
+                document.getElementById('_enum_num1').options.add(new Option(emunEntity.value, emunEntity.code));
+            } else {
+                document.getElementById('_enum_num1').options.add(new Option(emunEntity.value, emunEntity.code));
+            }
+        }
+        debugger;
+        $('#_enum_num1').val(__select_value);
+    })();
+    function getData(){
+       var str = $('#sb').serialize();
+        alert(str);
+    }
+    function show(){
+       var trs = $("table tr");
+       var strs = trs.map(function(){
+           debugger;
+           return {
+               name:$(this).find('[name=name]').val(),
+               age:$(this).find('[name=age]').val(),
+               addres:$(this).find('[name=add]').val()
+           }
+        });
+        debugger;
+    }
+//    var arr = ['A', 'B', 'C'];
+//    var r = arr.filter(function (element, index, self) {
+//        console.log(element); // 依次打印'A', 'B', 'C'
+//        console.log(index); // 依次打印0, 1, 2
+//        console.log(self); // self就是变量arr
+//        if(element!='A'){
+//            return true;
+//        }else{
+//            return false;
+//        }
+//    });
+    var r, arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+    r=arr.filter(function(e,index,self){
+        return self.indexOf(e) == index;
+    });
+var a="string"; console.log(a.constructor==String); //string
+var a=new String("string") ; console.log(a.constructor==String); //string
+var a=1; console.log(typeof a); //number
+var a=false; console.log(typeof a); //boolean
+var a; console.log(typeof a); //undfined
+console.log("------------------")
+var a = null; console.log(typeof a); //object
+var a = document; console.log(typeof a); //object
+var a = []; console.log( typeof a); //object
+
+var a = function(){};console.log(typeof a) ;//function   除了可以判断数据类型还可以判断function类型
+//    debugger;
+console.log("***************************************");
+console.log($.type( function(){} ));
+
+console.log($.type( [] ));
+
+console.log($.type( new Date() ) );
+
+    var str=${srr};
+    for(){
+        if(str.indexOf(this.val（）)){
+            $("").att("",tru)
+        }
+    }
+
+
+</script>
+</body>
+</html>

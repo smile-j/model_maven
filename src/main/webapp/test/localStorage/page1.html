@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .head{
+            background: #fff0d5;
+        }
+        .right{
+            float: right;
+        }
+        .left{
+            float: left;
+        }
+    </style>
+</head>
+<link rel="stylesheet" type="text/css" href="../../component/jquery.dtGrid.v1.1.9/dependents/bootstrap/css/bootstrap.min.css"/>
+<script type="text/javascript" src="../../component/jq/jquery-1.4.4.min.js"></script>
+<body>
+<div class="head">
+    <label>名字：<input type="text" name="name"></label>
+    <label>年龄：<input type="text" name="age"></label>
+    <label>地址：<input type="text" name="add"></label>
+    <button type="button" onclick="add()">添加信息</button>
+    <button type="button" id="btn">添加信息</button>
+</div>
+<div class="div-body">
+    <table id="table" class="table">
+        <tr>
+            <th>名字：</th><th>年龄：</th><th>地址：</th><th>操作</th>
+        </tr>
+    </table>
+</div>
+</body>
+<script type="text/javascript">
+    window.addEventListener("storage", function (e) {
+        alert(e.newValue);
+    });
+    function getParam(name,params){
+        var result = params.match(
+                new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+        if (result == null || result.length < 1)
+        {
+            return "";
+        }
+        return result[1];
+    }
+var result=null;
+    window.onstorage=function(ev){
+//        var result = localStorage.getItem("tr");
+        var vues=localStorage[ev.key];
+//      console.log(result);
+   if(ev.key=='tr'){
+       result = localStorage[ev.key];
+       debugger
+       addtr(getParam('name',result),getParam('age',result),getParam('add',result));
+    result=null;
+   }
+
+    };
+    function add(){
+        var strs= $('input[type=text]').serialize();
+        localStorage.setItem('tr',strs);
+        debugger;
+        var name=$('input[name="name"]').val();
+        var age=$('input[name="age"]').val();
+        var add=$('input[name="add"]').val();
+        addtr(name,age,add);
+
+    }
+    function addtr(name,age,add){
+        var otable =$("#table");
+        var tr=$('<tr></tr>')
+        var tdName=$('<td>'+name+'</td>');
+        tr.append(tdName);
+        var tdAge=$('<td>'+age+'</td>');
+        tr.append(tdAge);
+        var tdAdd=$('<td>'+add+'</td>');
+        tr.append(tdAdd);
+        var tOper=$('<td></td>');
+        var btn = $('<span class="btn btn-danger">删除</span>');
+        btn.click(function(){
+            var bt=$(this);
+            bt.parent().parent().remove();
+        });
+        tOper.append(btn);
+        tr.append(tOper);
+        otable.append(tr);
+    }
+</script>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0 minimum-scale=1, maximum-scale=1">
+	<meta charset="UTF-8">
+	<title>详情</title>
+	<link rel="stylesheet" type="text/css" href="../css/cssreset.css">
+	<link rel="stylesheet" type="text/css" href="../css/detail446.css">
+	<link rel="stylesheet" type="text/css" href="../css/wheelpicker.min.css">
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/summer.js" ></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/wheelpicker.min.js"></script>
+	<script type="text/javascript" src="../js/cvi_busy_lib.js" ></script>
+	<script type="text/javascript" src="../js/rem.js"></script>
+	<script type="text/javascript" src="../js/doT.min.js"></script>
+	<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+	<script type="text/javascript" src="../js/layer_mobile/layer.js" ></script>
+	<script type="text/javascript" src="../js/appSettings.js"></script>
+	<script type="text/javascript" src="../js/translate.js"></script>
+	<script type="text/javascript" src="../js/vue/vue.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mobileAjax.js"></script>
+	<script type="text/javascript" src="../js/detail446.js"></script>
+
+</head>
+<body>
+<div id="app">
+	<div class="container" id="container" v-show="pageSwitch.detail">
+		<div class="top">
+			<div class="title_area">
+				<a class="backArr" id="backArr" href="../index.html">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title"></h3>
+			</div>
+			<div class="second">
+				<ul id="second">
+					<li id="paper"  @click="paper">稿纸</li>
+					<li id="files" @click="files">附件</li>
+					<li id="details" @click="transInfo">流转明细</li>
+				</ul>
+			</div>
+		</div>
+		
+
+		<!-- 稿纸页签 -->
+		<div class="paper" error="hide" v-show="tabSwitch.paper">
+			<div class="fname" id="fname">
+				{{paperTitle}}
+			</div>
+
+			<div class="content">
+				<ul id="paperList">
+					<li v-for="item in formInfos">
+						<p class="fl">{{item.Name}}</p>
+						<p class="fr">{{item.Value}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+		<div v-if="actions.length > 0" error="hide" class="btns" id="btns" style="display: none" v-show="tabSwitch.paper">
+			<button v-for="(item,index) in actions" v-bind:style="calc(index)" @click="goToForm(item)">{{item.Name}}</button>
+		</div>
+
+		<!-- 附件页签 -->
+		<div class="attachments" error="hide" v-show="tabSwitch.files">
+			<div class="files" style="padding-left: 0">
+				<ul class="fileList" id="fileList">
+					<li v-for="(item,index) in attachments">
+						<div class="fileType">{{item.FileFlag}}</div>
+						<div class="outer-box" @click="download(item)" >
+							<div class="file-content">
+								<div class="file-icon">
+									<img v-bind:src="item.FileExt | fileIcon" width="36px" height="36px">
+								</div>
+								<div class="file-title">
+									<span>{{item.Title}}</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- 流转明细 -->
+		<div class="details" error="hide" v-show="tabSwitch.transDetail">
+			<ul id="detailsList">
+				<li class="mingxi-list" v-for="item in details">
+					<div class="mingxi-title">{{item.StepName}}</div>
+						<div class="mingxi-content">
+							<div class="mingxi-content-left">
+								<div class="mingxi-content-img">
+									<img src="../img/tx1.png"/>
+								</div>
+							</div>
+							<div class="mingxi-content-middle">
+								<p class="mingxi-content-head">{{item.UserName}}</p>
+								<p class="mingxi-content-time">任务到达时间：{{item.ArriveTime | formatDate}}</p>
+								<p v-if="item.Status != '未接收'" class="mingxi-content-time">任务接收时间：{{item.AcceptTime | formatDate}}</p>
+							</div>
+							<div class="mingxi-content-right">
+
+							<div v-if="item.Status=='办理中'" v-bind:class="[normal,handle]">
+								办理中
+							</div>
+							<div v-else-if="item.Status=='未接收'" v-bind:class="[normal,unget]">未接收</div>
+							<div v-else-if="item.Status=='已完成'" v-bind:class="[normal]">
+								<img v- src='../img/finished.png'/>
+							</div>
+							
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 表单 
+	<div class="forms" error="hide" id="forms" v-if="!isUndefine(components)">
+		<div class="form-page" id="form-page" v-show="pageSwitch.form">
+			<div class="title_area form-title">
+				<a class="backArr"  @click="backDetail()">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title"></h3>
+			</div>
+		
+			<div class="fname" id="fname" style="margin-top: 1.34rem;">
+				{{context.DocTitle}}
+			</div>
+			<form class="model-473" id="model-473">
+				
+			</form>
+			<div class="btns">
+				<button style="width: 100%" @click="toPickDealer()">下一步</button>
+			</div>
+		</div>
+		<div class="meeting-sign" id="meeting-sign" v-show="pageSwitch.meeting">
+			<div class="title_area form-title">
+				<a class="backArr"  @click="backForm">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title"></h3>
+			</div>
+			<div class="meeting-depts left-space">
+				<ul class="depts" id="depts">
+					<li class="dept-row" v-for="(item,index) in departments" v-on:click.stop="beChecked($event)">
+						<p>{{item.DeptName}}</p>
+						<span>{{item.UserName}}</span>
+						<input type="hidden" name="Ct_SignDeptID" v-bind:value="item.UserID">
+						<input type="hidden" name="Ct_SignDeptIDReal" v-bind:value="item.DeptID">
+						<input class="meet-check" v-bind:id="'check' + index" type="checkbox" v-bind:value="item.DeptName" v-bind:uid="item.UserID" v-bind:did="item.DeptID" v-bind:checked="checkedStatus(item.DeptID)">
+						<label class="check-box" v-bind:for="'check' + index">
+							<span class="allright"></span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="btns" id="btns">
+				<button style="width: 100%" @click="afterPickDept()">确定</button>
+			</div>
+		</div>
+	</div>
+	-->
+</div>
+</body>
+</html>
