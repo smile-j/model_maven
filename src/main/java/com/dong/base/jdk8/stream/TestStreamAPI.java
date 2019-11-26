@@ -35,7 +35,7 @@ public class TestStreamAPI {
         //迭代
         Stream<Integer> stream4 = Stream.iterate(0, (x) -> x + 2);
         stream4.limit(10).forEach(System.out::println);
-
+        System.out.println("------------------------------------------------");
         //生成
         Stream.generate(()->Math.random())
                         .limit(5)

@@ -205,6 +205,7 @@ public class RedisTest {
         jedis.zadd("math",86,"Lina");
         jedis.zadd("math",52,"Dive");
         jedis.zadd("math",91,"Bobber");
+        jedis.zadd("math",9,"zhangsan");
         System.out.println("有序集合的成员数:"+jedis.zcard("math"));
         System.out.println("有序集合的成员:"+jedis.zrevrangeByScore("math",100,0));
         //返回set<Tuple>
@@ -247,6 +248,25 @@ public class RedisTest {
 
     }
 
+    @Test
+    public void test2(){
+        String result = null;
+        long resultFlag =-11,resultFlag2=-1;
+        jedis = pool.getResource();
+        System.out.println("zrevrangeByScore有序集合的成员:"+jedis.zrevrangeByScore("math",100,0));
+        System.out.println("zrevrange:"+jedis.zrevrange("math",0,0));
+
+//        resultFlag = jedis.zrem("math","zhangsan");
+        resultFlag = jedis.zadd("math",76,"Jim");
+//         resultFlag2 = jedis.zadd("math",1,"zhangsan");
+        System.out.println(resultFlag+" zrange有序集合的成员:"+jedis.zrange("math",0,-1));
+        System.out.println(resultFlag2+" zrangeByScore 有序集合的成员:"+jedis.zrangeByScore("math",0,100));
+
+//        Set<Long> positionIds = jedis.zrevrange();
+//        reverseRange(key, 0, 4);
+
+
+    }
 
 
 }

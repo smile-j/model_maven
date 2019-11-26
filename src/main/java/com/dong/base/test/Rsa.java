@@ -19,12 +19,15 @@ public class Rsa {
         genKeyPair();
         //加密字符串
         String message = "和df723820";
-        System.out.println("随机生成的公钥为:" + keyMap.get(0));
-        System.out.println("随机生成的私钥为:" + keyMap.get(1));
-        String messageEn = encrypt(message,keyMap.get(0));
+//        System.out.println("随机生成的公钥为:" + keyMap.get(0));
+//        System.out.println("随机生成的私钥为:" + keyMap.get(1));
+//        String messageEn = encrypt(message,keyMap.get(0));
+//        System.out.println(message + "\t加密后的字符串为:" + messageEn);
+//        String messageDe = decrypt(messageEn,keyMap.get(1));
+//        System.out.println("还原后的字符串为:" + messageDe);
+
+        String messageEn = encrypt(message,"MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDXpA1dFjsRBE3YmjtBkP7l4cNDxLPGB0NIlARBD0+uJltCksRaRNNnRGSiuQaGXVpkG4UMDNwTpDxRSjUoo1d8rIg3X01XJp5ozYBJ/LT23fxn1o384FFjGKEneFJ3SpSJz29zt2E+DZ93FFUWdPhc019Vk+JKGM8hz5tWvLYJ5wIDAQAB");
         System.out.println(message + "\t加密后的字符串为:" + messageEn);
-        String messageDe = decrypt(messageEn,keyMap.get(1));
-        System.out.println("还原后的字符串为:" + messageDe);
     }
 
     /**
