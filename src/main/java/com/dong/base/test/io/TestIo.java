@@ -22,7 +22,7 @@ public class TestIo {
 //            Reader reader=new FileReader("");//            byte [] res = new byte[512];
 //            Reader reader = new InputStreamReader(is);
             char [] res = new char[5];
-            byte [] bytes = new byte[5];
+            byte [] bytes = new byte[502];
             int  len = 0;
 //            while ((len = reader.read(res))>0){
             while ((len = bis.read(bytes))>0){//bis.available()

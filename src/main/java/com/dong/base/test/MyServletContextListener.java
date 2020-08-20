@@ -2,9 +2,7 @@ package com.dong.base.test;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+
 
 /**
  * Created by Administrator on 2018/1/18.
