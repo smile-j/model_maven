@@ -8,7 +8,6 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.SynchronousQueue;
 
 /**
- * Created by Administrator on 2018/1/24.
  * LinkedBlockingQueue和ArrayBlockingQueue都是可阻塞的队列
 
  　内部都是使用ReentrantLock和Condition来保证生产和消费的同步；

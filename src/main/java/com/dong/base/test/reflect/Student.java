@@ -29,5 +29,9 @@ public class Student extends Person {
     public Student(){
         System.out.println("stu有参构造器！");
     }
+
+    public void doAction(){
+        System.out.println("我是学生，我去上学去了！");
+    }
 }
 
