@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64de54f0-a43a-4704-abeb-cd3c233b0f92" name="Default Changelist" comment="1">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/model_maven_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/model_maven_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_72.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dong/base/test/listmap/TestQuence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dong/base/test/listmap/TestQuence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/model_maven.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dong/base/jdk8/lambda/TestLambda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dong/base/jdk8/lambda/TestLambda.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dong/base/test/listmap/TestQuence$Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dong/base/test/listmap/TestQuence$Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dong/base/test/listmap/TestQuence.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dong/base/test/listmap/TestQuence.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/dong/base/test/reflect/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dong/base/test/reflect/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_maven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/model_maven.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dong/base/test/guava/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dong/base/test/guava/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dong/rest/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dong/rest/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dong/rest/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dong/rest/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,48 +30,67 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Reflect_One.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/guava/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1674">
-              <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+            <state relative-caret-position="445">
+              <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#testGuavaThread#0;class#Main#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/BufferAndLock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1471">
+              <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/CreateObject.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/Buffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="31" />
+            <state relative-caret-position="432">
+              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/LinkedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="671" column="13" selection-start-line="671" selection-start-column="13" selection-end-line="671" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#23214#23215#0" expanded="true" />
+                <element signature="e#23241#23242#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Person.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/TestMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="38" column="49" lean-forward="true" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
               <folding>
-                <element signature="e#584#585#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+                <element signature="e#771#772#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Student.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/BufferAndLock2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-              <folding>
-                <element signature="e#605#606#0" expanded="true" />
-                <element signature="e#652#653#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-252">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -85,12 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>zset</find>
-      <find>pop</find>
-      <find>resultFlag</find>
-      <find>shutdownNow</find>
-      <find>executorService</find>
-      <find>Excu</find>
       <find>shutdown()</find>
       <find>shutdown</find>
       <find>ExecutorService</find>
@@ -99,7 +115,6 @@
       <find>Base64</find>
       <find>TcBdy0SOiHnh9sX3CTO5FoZPQLb</find>
       <find>append</find>
-      <find>json</find>
       <find>.txt</find>
       <find>IOUtils</find>
       <find>csv</find>
@@ -114,7 +129,14 @@
       <find>代理</find>
       <find>newinst</find>
       <find>无参构造器</find>
+      <find>deadlock</find>
+      <find>json</find>
+      <find>ThreadPoolExecutor</find>
+      <find>threadPoolExecutor</find>
+      <find>队列</find>
+      <find>tak</find>
       <find>sleep</find>
+      <find>生产者</find>
     </findStrings>
     <dirStrings>
       <dir>D:\project\test_project\model_maven\model_maven-master\src\main\java\com\dong\base</dir>
@@ -127,11 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/desgin/create/factory/abstractFactory/AppleFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/desgin/create/factory/abstractFactory/BananaFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/desgin/create/factory/abstractFactory/OrangeFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/desgin/create/factory/abstractFactory/OrderSendClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/desgin/create/factory/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/desgin/create/singleton/SessionCountClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/desgin/create/singleton/SessionCount.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/desgin/create/Admin.java" />
@@ -168,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/test/MyServletContextListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dong/example/Org.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/util/GjsonTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/test/sss.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/test/testjs.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/jdk8/lambda/TestLambda.java" />
@@ -178,6 +194,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/test/arith/TestArith.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/CreateObject.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/test/guava/TestCollection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dong/rest/service/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/lock/redis/RedissonLock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/test/guava/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/TestMain.java" />
       </list>
     </option>
   </component>
@@ -254,7 +276,28 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dong" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="netty" type="462c0819:PsiDirectoryNode" />
+              <item name="desgin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dong" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="lock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
+              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dong" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="lock" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
@@ -285,7 +328,7 @@
               <item name="dong" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="arith" type="462c0819:PsiDirectoryNode" />
+              <item name="guava" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
@@ -296,7 +339,7 @@
               <item name="dong" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="design" type="462c0819:PsiDirectoryNode" />
+              <item name="lock" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
@@ -305,59 +348,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dong" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="design" type="462c0819:PsiDirectoryNode" />
-              <item name="testProxy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dong" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="design" type="462c0819:PsiDirectoryNode" />
-              <item name="testProxy" type="462c0819:PsiDirectoryNode" />
-              <item name="dynamic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dong" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="design" type="462c0819:PsiDirectoryNode" />
-              <item name="testProxy" type="462c0819:PsiDirectoryNode" />
-              <item name="dynamic" type="462c0819:PsiDirectoryNode" />
-              <item name="jdkproxy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dong" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="reflect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dong" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="socket" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
@@ -377,136 +368,42 @@
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="model_maven-master" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.alibaba:fastjson:1.2.72" type="70bed36:NamedLibraryElementNode" />
+              <item name="&lt; 1.8 (2) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.alibaba:fastjson:1.2.72" type="70bed36:NamedLibraryElementNode" />
-              <item name="fastjson-1.2.72.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="&lt; 1.8 (2) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.alibaba:fastjson:1.2.72" type="70bed36:NamedLibraryElementNode" />
-              <item name="fastjson-1.2.72.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="fastjson" type="462c0819:PsiDirectoryNode" />
+              <item name="&lt; 1.8 (2) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.google.code.gson:gson:2.8.6" type="70bed36:NamedLibraryElementNode" />
+              <item name="&lt; 1.8 (2) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.google.code.gson:gson:2.8.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="gson-2.8.6.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.google.code.gson:gson:2.8.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="gson-2.8.6.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="gson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: com.google.code.gson:gson:2.8.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="gson-2.8.6.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="gson" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: commons-io:commons-io:2.6" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: commons-io:commons-io:2.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="commons-io-2.6.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: commons-io:commons-io:2.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="commons-io-2.6.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:5.0.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:5.0.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-core-5.0.0.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:5.0.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-core-5.0.0.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:5.0.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-core-5.0.0.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="cglib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="model_maven" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:5.0.0.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-core-5.0.0.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="cglib" type="462c0819:PsiDirectoryNode" />
-              <item name="proxy" type="462c0819:PsiDirectoryNode" />
+              <item name="&lt; 1.8 (2) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="concurrent" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -520,7 +417,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1616412603236" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1619430409074" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -555,9 +452,48 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CreateObject">
-    <configuration name="BufferAndLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dong.base.test.lock.BufferAndLock" />
+  <component name="RunManager" selected="Application.TestMain">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dong.base.test.guava.Main" />
+      <module name="model_maven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dong.base.test.guava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RedissonLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dong.base.lock.redis.RedissonLock" />
+      <module name="model_maven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dong.base.lock.redis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SyncDeadLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dong.base.test.thread.SyncDeadLock" />
+      <module name="model_maven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dong.base.test.thread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dong.base.test.lock.TestMain" />
       <module name="model_maven" />
       <extension name="coverage">
         <pattern>
@@ -569,78 +505,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateObject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dong.base.test.reflect.CreateObject" />
+    <configuration name="UserServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dong.rest.service.UserServiceImpl" />
       <module name="model_maven" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.dong.base.test.reflect.*" />
+          <option name="PATTERN" value="com.dong.rest.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dong.base.test.lock.TestList" />
-      <module name="model_maven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dong.base.test.lock.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestInterruptibly.testInterruptibly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model_maven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dong.base.test.lock.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.dong.base.test.lock" />
-      <option name="MAIN_CLASS_NAME" value="com.dong.base.test.lock.TestInterruptibly" />
-      <option name="METHOD_NAME" value="testInterruptibly" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestLambda.composeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model_maven" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dong.base.jdk8.lambda.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.dong.base.jdk8.lambda" />
-      <option name="MAIN_CLASS_NAME" value="com.dong.base.jdk8.lambda.TestLambda" />
-      <option name="METHOD_NAME" value="composeTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BufferAndLock" />
-      <item itemvalue="Application.TestList" />
-      <item itemvalue="Application.CreateObject" />
-      <item itemvalue="JUnit.TestLambda.composeTest" />
-      <item itemvalue="JUnit.TestInterruptibly.testInterruptibly" />
+      <item itemvalue="Application.SyncDeadLock" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.UserServiceImpl" />
+      <item itemvalue="Application.RedissonLock" />
+      <item itemvalue="Application.TestMain" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CreateObject" />
-        <item itemvalue="Application.TestList" />
-        <item itemvalue="Application.BufferAndLock" />
-        <item itemvalue="JUnit.TestInterruptibly.testInterruptibly" />
-        <item itemvalue="JUnit.TestLambda.composeTest" />
+        <item itemvalue="Application.TestMain" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.RedissonLock" />
+        <item itemvalue="Application.UserServiceImpl" />
+        <item itemvalue="Application.SyncDeadLock" />
       </list>
     </recent_temporary>
   </component>
@@ -723,6 +614,21 @@
       <workItem from="1616232763765" duration="240000" />
       <workItem from="1616399703528" duration="3575000" />
       <workItem from="1616409265643" duration="1014000" />
+      <workItem from="1617010224590" duration="2957000" />
+      <workItem from="1617059065467" duration="984000" />
+      <workItem from="1617852316640" duration="1366000" />
+      <workItem from="1617878676417" duration="610000" />
+      <workItem from="1617932874810" duration="3423000" />
+      <workItem from="1618211639628" duration="94000" />
+      <workItem from="1618309519224" duration="1816000" />
+      <workItem from="1618564832256" duration="1314000" />
+      <workItem from="1618910449696" duration="1212000" />
+      <workItem from="1618970474242" duration="4577000" />
+      <workItem from="1619087019001" duration="626000" />
+      <workItem from="1619146790013" duration="5167000" />
+      <workItem from="1619218851828" duration="6500000" />
+      <workItem from="1619402681147" duration="188000" />
+      <workItem from="1619415979126" duration="5767000" />
     </task>
     <task id="LOCAL-00001" summary="缓存数据库">
       <created>1561548021393</created>
@@ -759,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597925135046</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1">
+      <created>1617059447771</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1617059447771</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -795,7 +708,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160863000" />
+    <option name="totallyTimeSpent" value="197464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -809,8 +722,8 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8003195" visible="true" weight="0.28690386" />
-      <window_info id="Structure" order="1" sideWeight="0.1996805" side_tool="true" visible="true" weight="0.28690386" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68039215" weight="0.48372445" />
+      <window_info id="Structure" order="1" sideWeight="0.31960785" side_tool="true" weight="0.48372445" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -819,8 +732,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.629393" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.41054314" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5117271" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.092651755" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.031948883" />
@@ -828,7 +741,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.5127932" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.29317698" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.046908315" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32942432" />
@@ -925,7 +838,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="缓存数据库" />
-    <option name="LAST_COMMIT_MESSAGE" value="缓存数据库" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -960,6 +874,12 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/dong/base/test/guava/TestCollection.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -984,227 +904,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/jdk8/annotation/MyAnnotation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/jdk8/annotation/MyAnnotations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/jdk8/annotation/TestAnnotation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16632">
-          <caret line="950" column="14" selection-start-line="950" selection-start-column="14" selection-end-line="950" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/jdk8/lambda/Lambda.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#2151#2152#0" expanded="true" />
-            <element signature="e#2194#2195#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/example/ExtractService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-846">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/example/LinkTypeData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/example/Org.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/example/Rule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/example/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/example/TestSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-879">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/example/RuleException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-141">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/reconsitution/TestModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/listmap/TestQuence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/listener/HttpSessionListenerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/listener/ServletRequestListenerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/lock/zk/ZookeeperImproveLock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="142" column="24" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/concurrent/TestProductorAndConsumerForLock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/TestInterruptibly.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="72" column="39" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/test/flex.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/Buffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/BufferAndLock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="55" column="24" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/BufferAndLock2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/TestList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/gc/OOM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.0.RELEASE/spring-core-5.0.0.RELEASE.jar!/org/springframework/cglib/proxy/CallbackFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/AbstractSequentialList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3852">
-          <caret line="237" column="19" selection-start-line="237" selection-start-column="11" selection-end-line="237" selection-end-column="19" />
-          <folding>
-            <element signature="e#8834#8835#0" expanded="true" />
-            <element signature="e#8871#8872#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13302">
-          <caret line="784" column="16" selection-start-line="784" selection-start-column="16" selection-end-line="784" selection-end-column="16" />
-          <folding>
-            <element signature="e#23214#23215#0" expanded="true" />
-            <element signature="e#23241#23242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2484">
@@ -1213,13 +912,6 @@
             <element signature="e#6283#6284#0" expanded="true" />
             <element signature="e#6351#6352#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1335,13 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Reflect_One.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1674">
-          <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1366,11 +1051,281 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/CreateObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="286">
           <caret line="42" column="31" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/reflect/Reflect_One.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/jvm/FinalizedEscape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/desgin/structure/composite/CompositeClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/jvm/TestJVm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1314">
+          <caret line="97" column="2" selection-start-line="97" selection-start-column="2" selection-end-line="97" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/thread/LockDeadDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="method#main#0;class#LockDeadDemo#0" />
+            <element signature="class#DeadLockBean#0;class#LockDeadDemo#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/thread/SyncDeadLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/18.0/guava-18.0-sources.jar!/com/google/common/collect/ImmutableList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5148">
+          <caret line="330" column="33" selection-start-line="330" selection-start-column="33" selection-end-line="330" selection-end-column="33" />
+          <folding>
+            <element signature="e#3975#3976#0" expanded="true" />
+            <element signature="e#4013#4014#0" expanded="true" />
+            <element signature="e#10739#10740#0" expanded="true" />
+            <element signature="e#10798#10799#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/18.0/guava-18.0-sources.jar!/com/google/common/collect/RegularImmutableList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+          <folding>
+            <element signature="e#1365#1366#0" expanded="true" />
+            <element signature="e#1403#1404#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/18.0/guava-18.0-sources.jar!/com/google/common/collect/SingletonImmutableList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+          <folding>
+            <element signature="e#1228#1229#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3384">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/TestSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/rest/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/example/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/TestStr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16794">
+          <caret line="1013" column="41" selection-start-line="1013" selection-start-column="41" selection-end-line="1013" selection-end-column="41" />
+          <folding>
+            <element signature="e#44347#44348#0" expanded="true" />
+            <element signature="e#44395#44396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/concurrent/Executors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3168">
+          <caret line="217" column="50" selection-start-line="217" selection-start-column="50" selection-end-line="217" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/concurrent/SynchronousQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10674">
+          <caret line="643" column="10" selection-start-line="643" selection-start-column="10" selection-end-line="643" selection-end-column="10" />
+          <folding>
+            <element signature="e#34990#34991#0" expanded="true" />
+            <element signature="e#35017#35018#0" expanded="true" />
+            <element signature="e#35291#35292#0" expanded="true" />
+            <element signature="e#35374#35375#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21060">
+          <caret line="1230" column="11" selection-start-line="1230" selection-start-column="11" selection-end-line="1230" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/lock/redis/RedissonLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="62" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/guava/TestCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/TestThread2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/thread/TaskTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/concurrent/CompletableFuture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30564">
+          <caret line="1792" column="28" selection-start-line="1792" selection-start-column="11" selection-end-line="1792" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/guava/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#testGuavaThread#0;class#Main#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/BufferAndLock2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/BufferAndLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1471">
+          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/soft/Java/jdk1.8.0_201/src.zip!/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="671" column="13" selection-start-line="671" selection-start-column="13" selection-end-line="671" selection-end-column="13" />
+          <folding>
+            <element signature="e#23214#23215#0" expanded="true" />
+            <element signature="e#23241#23242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/TestMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="38" column="49" lean-forward="true" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+          <folding>
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dong/base/test/lock/Buffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
         </state>
       </provider>
     </entry>
