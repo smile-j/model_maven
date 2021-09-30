@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能社-http://www.zhinengshe.com</title>
+<style></style>
+<script>
+   function jsonp(url,data,fnSucc){
+		//定义函数
+		var fnName='show'+Math.random();
+		
+		fnName=fnName.replace('.','');
+		
+		window[fnName]=function(json){//给它挂到window就变成了全局函数
+		  //alert(json.s);
+		  fnSucc&&fnSucc(json);
+		  
+		}
+		
+		data.cb=fnName;
+	
+		var arr=[];
+		
+		for(var name in data){
+			arr.push(name+'='+data[name]);	
+		}
+	
+		//调用函数（创建--数据）	
+		var oS=document.createElement('script');
+		
+		oS.src=url+'?'+arr.join('&');	
+		
+		var oH=document.getElementsByTagName('head')[0];
+		
+		oH.appendChild(oS);   
+   }
+   
+   
+  window.onload=function(){
+		var oT=document.getElementById('t1');
+		
+		 
+		oT.onkeyup=function(){
+			
+			jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+				wd:oT.value	
+			},function(json){
+				alert(json.s);	
+			});
+			
+		};  
+   };
+</script>
+</head>
+
+<body>
+<input type="text" id="t1"/>
+</body>
+</html>

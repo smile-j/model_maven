@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="shortcut icon" href="resources/img/logo-color.png" type="image/x-icon">-->
+    <title>测试</title>
+    <style>
+        .out-div {
+            color: #FFFFFF;
+            font-size: 16px;
+            line-height: 40px;
+            display: inline-block;
+            height: 40px;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+            margin-left: 32px;
+            vertical-align: top;
+            background-color: maroon;
+        }
+
+        .arrow {
+            width: 0px;
+            height: 0px;
+            border-top: 10px solid transparent;
+            border-right: 10px solid;
+            border-bottom: 10px solid transparent;
+            position: absolute;
+            margin-left: -10px;
+            margin-top: 10px;
+            border-right-color: maroon;
+        }
+        .my{
+            width: 0;
+            height: 0;
+            border-width: 40px;
+            border-style: solid;
+            border-color: red transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+<div class="out-div">
+    <div class="arrow"></div>
+    <span>这是一个提示框</span>
+</div>
+
+
+<div class="my">
+
+</div>
+<script type="text/javascript">
+
+ var tt ="aa";
+ function test() {
+    alert(tt);
+    var tt = "bb";
+     alert(tt);
+  }
+
+test();
+</script>
+</body>
+</html>

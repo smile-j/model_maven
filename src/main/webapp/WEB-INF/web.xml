@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1"
+         metadata-complete="true">
+
+    <servlet>
+        <servlet-name>testJsSocket</servlet-name>
+        <servlet-class>com.dong.base.serlvet.TestJsSocket</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>testPromise</servlet-name>
+        <servlet-class>com.dong.base.serlvet.TestPromise</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>testPromise2</servlet-name>
+        <servlet-class>com.dong.base.serlvet.TestPromise2</servlet-class>
+    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>testWeSocket</servlet-name>-->
+        <!--<servlet-class>com.dong.base.serlvet.WebSocketTest</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>testWeSocket2</servlet-name>-->
+        <!--<servlet-class>com.dong.base.serlvet.WebSocketTest2</servlet-class>-->
+    <!--</servlet>-->
+    
+    <servlet-mapping>
+        <servlet-name>testJsSocket</servlet-name>
+        <url-pattern>/testSocket.do</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>testPromise</servlet-name>
+        <url-pattern>/testPromise.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>testPromise2</servlet-name>
+        <url-pattern>/testPromise2.do</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>testWeSocket</servlet-name>-->
+        <!--<url-pattern>/testWeSocket.do</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>testWeSocket2</servlet-name>-->
+        <!--<url-pattern>/testWeSocket2.do</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+
+</web-app>

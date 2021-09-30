@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style type="text/css">
+        .button {
+            width: 50px;
+            height: 30px;
+            cursor: pointer;
+            background-color: #0099CC;
+        }
+    </style>
+    <script type="text/javascript" src="../../component/jq/jquery-1.4.4.min.js"></script>
+</head>
+<body>
+<form>
+    <input type="text" name="name">
+    <input type="text" name="pwd">
+    <label>篮球:<input type="checkbox" value="box" name="like"></label>
+    <label>足球:<input type="checkbox" value="girl" name="like" checked></label>
+    <label>boy: <input type="radio" name="sex" value="boy"></label>
+    <label>girl:<input type="radio" name="sex" value="girl"></label>
+    地址: <select name="address" disabled>
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="广州" selected>广州</option>
+    <option value="深圳">深圳</option>
+</select>
+
+    <div class="button" onclick="show()">点击我</div>
+</form>
+<script type="text/javascript">
+    function show() {
+        var num = $("form input").length;
+        var like = $("form input:checked")
+        var sex = $('form [name=sex]:checked');
+        debugger;
+
+    }
+
+    $.ajax({
+        type: "get",
+        url:'http://192.168.1.108:8089/model/testSocket.do',
+        data: {
+            name: 'ac', age: 'm'
+        },
+        async: false,
+        dataType: "jsonp",
+        success: function (data) {
+            debugger;
+            console.log('aaa');
+        },
+        error: function (request) {
+            debugger;
+            console.log('bbbb');
+        }
+    });
+
+
+
+//    $.ajax({
+//        url:'http://192.168.1.108:8089/bbs/boardController.do?method=testJsonp',
+//                data:{
+//        name:'ac',
+//                age:'m'
+//    },
+//    jsonp:'callback',
+//            jsonpCallback:"successCallback",
+//            dataType:'jsonp',
+//            type:'get',
+//            success:function(msg){
+//        debugger;
+//        console.log(eval(msg));
+//    },
+//    error:function(msg) {
+//        debugger;
+//        console.log(eval(msg));
+//    }
+//    })
+
+
+</script>
+</body>
+</html>

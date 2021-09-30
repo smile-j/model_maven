@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0 minimum-scale=1, maximum-scale=1">
+	<meta charset="UTF-8">
+	<title>详情</title>
+	<link rel="stylesheet" type="text/css" href="../css/newDetail.css">
+	<link rel="stylesheet" type="text/css" href="../css/iscroll.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/summer.js" ></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../font/iscroll.js"></script>
+	<script type="text/javascript" src="../js/rem.js"></script>
+	<script type="text/javascript" src="../js/doT.min.js"></script>
+	<script src="../js/Frameworks/iuapmobile.frameworks.core.js" ></script>
+	<script type="text/javascript" src="../js/layer_mobile/layer.js" ></script>
+	
+	<script type="text/javascript">
+		var parentId;
+		$().ready(function(){
+			$("#paper").on("click",paper);
+			$("#files").on("click",files);
+			$("#details").on("click",details);
+
+			var first = $("#second li:first-child");
+			first.addClass("hit");
+			$("#second li").on("click",function(){
+				$(this).css({"background-color": "#175499",color: "#FFF"});
+				$(this).siblings().css({"background-color": "#FFF",color: "#337AB7"});
+			});
+
+			var from = getQueryByName("from");
+			
+			$("#showDetail").on("click",function(){
+				$("#container").css("display","block");
+				$("#forms").css("display","none");
+			});
+
+			$("#next").on("click",function(){
+				$("#container").css("display","none");
+				$("#forms").css("display","block");
+			});
+
+			$("#redirect").on("click",function(){
+
+				$("#container").css("display","none");
+				$("#forms").css("display","block");
+			});
+			$("#yes").on("click",function(){
+				var checkeds = $("input[type='checkbox']:checked");
+				var depts = [];
+				$.each(checkeds,function(i, ele){
+					var deptname = $(ele).siblings(".um-black").html();
+					depts.push(deptname);
+					console.log(deptname);
+				});
+				$("#"+parentId+" > p:nth-child(2)").html(depts.join(", "));
+				$("#fade").css("display","none");
+				$("#light").css("display","none");
+
+			});
+			$("#no").on("click",function(){
+				$("#fade").css("display","none");
+				$("#light").css("display","none");
+			});
+
+			$(".paper").css("display","block");
+			$(".attachments").css("display","none");
+			$(".details").css("display","none");
+
+			/*var signData = [
+						{itemName:'计划财务部'},
+						{itemName:'风险管理部'},
+						{itemName:'资金财务部'}
+					];
+			var emergencyData = [
+				{itemName:'普通'},
+				{itemName:'急件'},
+				{itemName:'特急'}
+			];
+			var encryptData = [
+				{itemName:'普通'},
+				{itemName:'秘密'},
+				{itemName:'机密'},
+				{itemName:'绝密'},
+				{itemName:'商密一级'},
+				{itemName:'商密二级'},
+				{itemName:'商密三级'}
+			];
+			var typeData =  [
+				{itemName:'华融科技'},
+				{itemName:'会议纪要'},
+			];
+			$("#pickDept").on("click",signData,pickDept);
+			$("#enptry").on("click",encryptData,pickDept);
+			$("#emgencry").on("click",emergencyData,pickDept);
+			$("#typeData").on("click",typeData ,pickDept);*/
+
+			$(".dept-row").on("click",function(){
+				var cbx = $(this).children("input[type='checkbox']");
+				var ischecked = cbx.prop("checked");
+	 			cbx.attr("checked",!ischecked);
+			});
+			$("#pickDept").on("click",function(){
+				$("#form-page").css("display","none");
+				$("#meeting-sign").css("display","block");
+			});
+			$("#backForm").on("click",function(){
+				$("#form-page").css("display","block");
+				$("#meeting-sign").css("display","none");
+			});
+			$("#afterPickDept").on("click",function(){
+				$(".meet-check:checked").each(function(i,ele){
+					var dept = $(ele).siblings("span").html();
+					console.log(dept);
+				});
+				$("#form-page").css("display","block");
+				$("#meeting-sign").css("display","none");
+			});
+
+			
+    		/*$('.select-row > select').each(function(i, ele){
+    			var id = $(ele).attr("id");
+    			var opt = {
+	    			'date': {
+	    				preset: 'date'
+	    			},
+	    			'select': {
+	    			   preset: 'select'
+	    		   }
+	    		};
+    			$("#"+id).scroller('destroy').scroller(
+	    			$.extend(opt['select'], {
+	    				theme: "ios7",
+	    				mode: "scroller",
+	    				display: "bottom",
+	    				animate: ""
+	    			})
+	    		);
+    		});*/
+    		
+		});
+		function paper(argument) {
+			$(".paper").css("display","block");
+			$(".attachments").css("display","none");
+			$(".details").css("display","none");
+		}
+
+		function files(){
+			$(".paper").css("display","none");
+			$(".attachments").css("display","block");
+			$(".details").css("display","none");
+		}
+
+		function details(){
+			$(".paper").css("display","none");
+			$(".attachments").css("display","none");
+			$(".details").css("display","block");
+		}
+
+			
+		function backToIndex(){
+	 		window.location.href = "../index.html?approvalState="+state;
+	 	}
+
+	 	function showForm(){
+	 		
+	 	}
+	 	function hideForm(){
+	 		$(".paper").css("display","block");
+			$("#second").css("display","block");
+			$("#forms").css("display","none");
+	 	}
+	 	function toPickDealer(){
+	 		window.location.href = "pickDealer.html";
+	 	}
+	 	function showBlcok(id){
+	 		$("#"+id).css("display","block");
+	 	}
+	 	function hideBlcok(id){
+	 		$("#"+id).css("display","none");
+	 	}
+	</script>
+</head>
+<body>
+	<div class="container" id="container">
+		<div class="top">
+			<div class="title_area">
+				<a class="backArr" id="backArr" href="../index.html">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title">股份有限公司部门发文</h3>
+			</div>
+			<div class="second" id="second">
+				<ul id="second">
+					<li id="paper">稿纸</li>
+					<li id="files">附件</li>
+					<li id="details">流转明细</li>
+				</ul>
+			</div>
+		</div>
+		
+
+		<!-- 稿纸页签 -->
+		<div class="paper">
+			<div class="fname" id="fname">
+				关于印发《xxx会计审核办法文件》(A版)的重要通知
+			</div>
+
+			<div class="content">
+				<ul id="paperList">
+					
+					<li>
+						<p class="fl">当前状态</p>
+						<p class="fr">会签</p>
+						<!--<input type="text" class="arg-text" value="会签">-->
+					</li>
+					<li>
+						<p class="fl">拟稿人</p>
+						<p class="fr">李青</p>
+						<!--<p class="deal">李青</p>-->
+					</li>
+					<li>
+						<p class="fl">拟稿时间</p>
+						<p class="fr">2017-04-05</p>
+						<!--<input type="date" class="arg-date" name="" value="2017-04-05">-->
+					</li>
+					<li>
+						<p class="fl">是否会签</p>
+						<p class="fr">会签</p>
+					</li>
+					<li>
+						<p class="fl">会签部门</p>
+						<p class="fr">风险管理部</p>
+						<!--<p class="deal" id="dept" onclick="pickDept("dept")">风险管理部</p>-->
+					</li>
+					<li>
+						<p class="fl">机要编号时间</p>
+						<p class="fr">2017-04-06</p>
+					</li>
+					<li>
+						<p class="fl">机要编号时间</p>
+						<p class="fr">2017-04-06</p>
+					</li>
+					<li>
+						<p class="fl">拟稿时间</p>
+						<p class="fr">2017-04-05 14:23:54</p>
+					</li>
+					<li>
+						<p class="fl">部门负责人</p>
+						<p class="fr">李青</p>
+					</li>
+					<li>
+						<p class="fl">到达时间</p>
+						<p class="fr">2017-04-05 14:23:54</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+		<div class="btns" id="btns">
+			<button id="next" style="width: 100%">下一步</button>
+		</div>
+
+
+		<!-- 意见弹出框 已弃用
+		<div id="fade" class="black_overlay"> 
+			<div id="light" class="white_content"> 
+				<form id="argsform" class="argsform">
+					<ul id="argsul" class="argsul">
+						<li class="argli">
+							<p>领导批示</p>
+							<textarea class="view" name=""+name+"" placeholder="请输入意见">
+							</textarea>
+						</li>
+
+						
+						<li class="dealerli">
+							<p>办理人</p>
+							<div>
+								<span>请选择办理人</span>
+								<img src="../img/next.png">
+							</div>
+						</li>
+						<li class="timeli">
+							<p>批示时间</p>
+							<input class="pick-date" type="date" name="">
+						</li>
+						<li>
+							<div class="um-check-group um-check-group-left">	
+								<label class="um-check-group-item">
+									<input type="radio" name="n">
+									<span class="um-icon-ISO um-vc-ISO"></span>
+									<span class="um-black">风险管理部</span>
+								</label>
+							</div>
+							<div class="um-check-group um-check-group-left">	
+								<label class="um-check-group-item">
+									<input type="radio" name="n">
+									<span class="um-icon-ISO um-vc-ISO"></span>
+									<span class="um-black">财务部</span>
+								</label>
+							</div>
+							<div class="um-check-group um-check-group-left">	
+								<label class="um-check-group-item">
+									<input type="radio" name="n">
+									<span class="um-icon-ISO um-vc-ISO"></span>
+									<span class="um-black">行政部</span>
+								</label>
+							</div>
+						</li>
+					</ul>
+				</form>
+				<div class="argsbtn">
+					<button class="confirm" id="yes" >确定</button>
+					<button class="cancel"  id="no" >取消</button>
+				</div>
+			</div> 
+		</div>-->
+		<!-- 附件页签 -->
+		<div class="attachments">
+			<div class="files" style="padding-left: 0">
+				<ul class="fileList" id="fileList">
+					<li>
+						<div class="fileType">正文</div>
+						<div class="outer-box">
+							<div>
+								<img src="../img/doc.png" width="36px" height="36px">
+								移动审批APP
+							</div>
+						</div>
+						<div class="outer-box">
+							<div>
+								<img src="../img/rar.png" width="36px" height="36px">
+								移动审批APP
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="fileType">附件</div>
+						<div class="outer-box">
+							<div>
+								<img src="../img/doc.png" width="36px" height="36px">
+								移动审批APP
+							</div>
+						</div>
+						<div class="outer-box">
+							<div>
+								<img src="../img/rar.png" width="36px" height="36px">
+								移动审批APP
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- 流转明细 -->
+		<div class="details">
+			<ul id="detailsList">
+				<li class="mingxi-list">
+					<div class="mingxi-title">会签</div>
+						<div class="mingxi-content">
+							<div class="mingxi-content-left">
+								<div class="mingxi-content-img">
+									<img src="../img/tx1.png"/>
+								</div>
+							</div>
+							<div class="mingxi-content-middle">
+								<p class="mingxi-content-head">李青</p>
+								<p class="mingxi-content-time">任务到达时间：17-4-5 13:22</p>
+								<p class="mingxi-content-time">任务到达时间：17-4-5 13:22</p>
+							</div>
+							<div class="mingxi-content-right">
+							<div class="mingxi-content-status unreceive">已完成</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 表单 -->
+	<div class="forms" id="forms" style="display: none">
+		<div class="form-page" id="form-page">
+			<div class="title_area" style="position: fixed;top:0; z-index: 10">
+				<a class="backArr"  id="showDetail">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title">股份有限公司签报</h3>
+			</div>
+		
+			<div class="fname" id="fname" style="margin-top: 44px">
+				关于印发《xxx会计审核办法文件》(A版)的重要通知
+			</div>
+			<form class="model-473">
+				<div class="top-group left-space">
+					<div class="select-row">
+						<p class="fl">公文待字</p>
+						<select class="selecter" id="docChar">
+							<option>华融科技</option>
+							<option>会议纪要</option>
+						</select>
+						<img class="arrow-img" src="../img/next.png">
+					</div>
+					<div class="select-row">
+						<p class="fl">公文年号</p>
+						<select class="selecter" name="DocYear" id="docYear">
+							<option value="2012">2012</option>
+							<option value="2013">2013</option>
+							<option value="2014">2014</option>
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+							<option value="2017" selected="selected">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+						</select>
+						<img class="arrow-img" src="../img/next.png">
+					</div>
+					<div class="select-row">
+						<p class="fl">缓急</p>
+						<p id="emergency_dummy" class="fr arrow">普通</p>
+					</div>
+					<div class="select-row">
+						<p class="fl">密级</p>
+						<p id="encrypt_dummy" class="fr arrow">普通</p>
+					</div>
+				</div>
+				<div class="select-row left-space bb">
+					<p class="fl">主办部门领导</p>
+					<p class="fr arrow">杨国兵</p>
+				</div>
+				<div class="meet-add">
+					<div class="nedd-sign">
+						<div class="um-check-group um-check-group-left">	
+							<label class="um-check-group-item">
+								<input type="radio" class="boxPick" name="n">
+								<span class="um-icon-ISO um-vc-ISO"></span>
+								<span class="um-black">不需要会签</span>
+							</label>
+						</div>
+						<div class="um-check-group um-check-group-left">	
+							<label class="um-check-group-item">
+								<input type="radio" class="boxPick" name="n" checked="checked">
+								<span class="um-icon-ISO um-vc-ISO"></span>
+								<span class="um-black">需要会签</span>
+							</label>
+						</div>
+					</div>
+					<div class="pickedDept">
+						<div class="select-row left-space bb" id="pickDept">
+							<p class="fl">请选择会签单位</p>
+							<p class="fr arrow"></p>
+						</div>
+						<div class="select-row left-space bb" id="pickDept">
+							<p class="fl" style="color: #337AB7;">计划财务部</p>
+						</div>
+					</div>
+				</div>
+				<div class="meet-add">
+					<div class="nedd-sign">
+						<div class="um-check-group um-check-group-left">	
+							<label class="um-check-group-item">
+								<input type="radio" class="boxPick" name="n">
+								<span class="um-icon-ISO um-vc-ISO"></span>
+								<span class="um-black">交部门领导签发</span>
+							</label>
+						</div>
+						<div class="um-check-group um-check-group-left">	
+							<label class="um-check-group-item">
+								<input type="radio" class="boxPick" name="n" checked="checked">
+								<span class="um-icon-ISO um-vc-ISO"></span>
+								<span class="um-black">增加会签</span>
+							</label>
+						</div>
+					</div>
+					<div class="pickedDept">
+						<div class="select-row left-space bb" id="pickDept">
+							<p class="fl">请选择会签单位</p>
+							<p class="fr arrow"></p>
+						</div>
+						<div class="select-row left-space bb" id="pickDept">
+							<p class="fl" style="color: #337AB7;">计划财务部</p>
+						</div>
+					</div>
+				</div>
+				<div class="header">
+					<div class="text-input">
+						<p class="input-name">主送</p>
+						<textarea class="scanner" placeholder="请输入内容(最多填20个字) ..."></textarea>
+					</div>
+					<div class="text-input">
+						<p class="input-name">抄送</p>
+						<textarea class="scanner" placeholder="请输入内容(最多填20个字) ..."></textarea>
+					</div>
+					<div class="text-input">
+						<p class="input-name">抄报</p>
+						<textarea class="scanner" placeholder="请输入内容(最多填20个字) ..."></textarea>
+					</div>
+					<div class="text-input">
+						<p class="input-name">公司内发送</p>
+						<textarea class="scanner" placeholder="请输入内容(最多填20个字) ..."></textarea>
+					</div>
+					<div class="text-input">
+						<p class="input-name">主题词</p>
+						<textarea class="scanner" placeholder="请输入内容(最多填20个字) ..."></textarea>
+					</div>
+				</div>
+			</form>
+			<div class="btns">
+				<button id="nextStep" style="width: 50%" onclick="toPickDealer()">下一步</button>
+				<button id="redirect" style="width: 50%" onclick="toPickDealer()">转拟稿人</button>
+			</div>
+		</div>
+		<div class="meeting-sign" id="meeting-sign" style="display: none">
+			<div class="title_area" style="position: fixed;top:0; z-index: 10">
+				<a class="backArr"  id="backForm">
+					<img src="../img/fanhui_normal.png" width="28px" height="22px">
+				</a>
+				<h3 class="title" id="title">股份有限公司签报</h3>
+			</div>
+			<div class="meeting-depts left-space">
+				<ul class="depts">
+					<li class="dept-row">
+						<p>吕品品</p>
+						<span>重大项目决策领导小组办公室</span>
+						<input class="meet-check" id="check1" type="checkbox" name="">
+						<label class="check-box" for="check1">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>刘畅(总部)</p>
+						<span>华融股份经营决策委员会</span>
+						<input class="meet-check" id="check2" type="checkbox" name="">
+						<label class="check-box" for="check2">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>龚莹</p>
+						<span>董事会办公室</span>
+						<input class="meet-check" id="check3" type="checkbox" name="">
+						<label class="check-box" for="check3">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+					<li class="dept-row">
+						<p>杨瑞芳</p>
+						<span>办公室</span>
+						<input class="meet-check" id="check4" type="checkbox" name="">
+						<label class="check-box" for="check4">
+							<span class="allright"></span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="btns" id="btns">
+				<button id="afterPickDept" style="width: 100%">确定</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 单选弹框 --> 
+	<div id="fade" class="black_overlay"> 
+		<div id="light" class="white_content"> 
+			<ul id="argsul" class="argsul">
+				<li id="items">
+					
+				</li>
+			</ul>
+			<div class="argsbtn">
+				<button class="confirm" id="yes" >确定</button>
+				<button class="cancel"  id="no" >取消</button>
+			</div>
+		</div> 
+	</div>
+
+	
+	<script id="pickItem" type="text/x-dot-template">
+	    {{ for (var i=0;i<it.length;i++ ){ }}
+	    	<div class="um-check-group um-check-group-left">	
+				<label class="um-check-group-item">
+					<input type="checkbox" class="boxPick" name="n">
+					<span class="um-icon-ISO um-vc-ISO"></span>
+					<span class="um-black">{{=it[i].itemName}}</span>
+				</label>
+			</div>
+	 	{{ } }}
+	</script>
+	<!--<script id="paperScript" type="text/x-dot-template">
+	    {{ for (var i=0;i<it.length;i++ ){ }}
+	    	<li>
+				<p class="fl">{{=it[i].name}}</p>
+				<p class="fr">{{=it[i].value}}</p>
+			</li>
+	 	{{ } }}
+	</script>
+	<script id="attachScript" type="text/x-dot-template">
+	    {{ for (var i=0;i<it.length;i++ ){ }}
+	    	<li onclick="download({{=it[i].nativeParam}})">
+	    		<img src={{=it[i].imgSrc}} width="36px" height="36px" >
+	    		{{=it[i].title}}
+	    	</li>
+	 	{{ } }}
+	</script>
+	<script id="detailsScript" type="text/x-dot-template">
+	    {{ for (var i=0;i<it.length;i++ ){ }}
+	    	<li class="mingxi-list">
+				<div class="mingxi-title">{{=it[i].stepname}}</div>
+					<div class="mingxi-content">
+						<div class="mingxi-content-left">
+							<div class="mingxi-content-img">
+								<img src="../img/tx1.png"/>
+							</div>
+						</div>
+						<div class="mingxi-content-middle">
+							<p class="mingxi-content-head">{{=it[i].username}}</p>
+							<p class="mingxi-content-time">
+								任务到达时间：{{=it[i].arriveTime}}
+							</p>
+							{{? it[i].status!="未接收"}}
+								<p class="mingxi-content-time">
+									任务到达时间：{{=it[i].acceptTime}}
+								</p>
+							{{ } }}
+						</div>
+						<div class="mingxi-content-right">
+						{{? it[i].status=="办理中"}}
+							<div class="mingxi-content-status handing">{{=it[i].status}}</div>
+						{{?? it[i].status=="未接收"}}
+						<div class="mingxi-content-status unreceive">{{=it[i].status}}</div>
+						{{?? it[i].status=="已完成"}}
+							<div class='mingxi-content-finished'>
+								<img src='../img/finished.png'/>
+							</div>
+						{{ } }}
+					</div>
+				</div>
+			</li>
+	 	{{ } }}
+	</script>-->
+</body>
+</html>
