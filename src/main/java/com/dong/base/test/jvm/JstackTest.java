@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  *
  *
  *
- *
+ * 例子：https://www.cnblogs.com/duanxz/p/5487576.html
  *
  */
 public class JstackTest {
@@ -28,7 +28,8 @@ public class JstackTest {
     public static void main(String[] args) throws IOException {
 //        System.out.println("jstack");
 //        System.in.read();
-        testDeadLock();
+//        testDeadLock();
+        testCpuHigh();
 
     }
     public static void testCpuHigh(){

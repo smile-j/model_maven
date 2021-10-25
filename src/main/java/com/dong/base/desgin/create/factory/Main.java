@@ -9,6 +9,11 @@ import com.dong.base.desgin.entity.Fruit;
 public class Main {
 
     public static void main(String [] args){
+        Object o = new Object();
+        int h;
+        int num = (o == null) ? 0 : (h = o.hashCode()) ^ (h >>> 16);
+
+        System.out.println("======="+num);
 
 //        Fruit fruit = getFruitBySimpleFactoy();
         Fruit fruit = getFruitByFactoryMethod();

@@ -82,6 +82,10 @@ public class Buffer {
 
 
         public static void main(String[] arg){
+            testMain();
+        }
+
+        public static void testMain(){
             Buffer buffer=new Buffer(10);
             Producer producer=new Producer(buffer);
             Consumer consumer=new Consumer(buffer);

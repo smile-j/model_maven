@@ -7,7 +7,7 @@ import java.util.concurrent.locks.LockSupport;
 
 /**
  * 线程状态
- * 线程的状态：new、runnable、blocked、waiting、timed_waiting、terminated
+ * 线程的状态：new、runnable、blocked((重点关注)、waiting((重点关注)、timed_waiting、terminated
  *
  */
 public class TestThreadState {

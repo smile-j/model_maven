@@ -59,8 +59,8 @@ public class TestThread2 extends Thread {
     * 来就是这个意思：当我们在run方法中调用sleep（或其他阻塞线程的方法）时，如果线程阻塞的
     * 时间过长，比如10s，那在这10s内，线程阻塞，run方法不被执行，但是如果在这10s内，stop被
     * 设置成true，表明要终止这个线程，但是，现在线程是阻塞的，它的run方法不能执行，自然也就
-    * 不能检查stop，所 以线程不能终止，这个时候，我们就可以用interrupt()方法了：我们在
-    * thread.stop = true;语句后调用thread.interrupt()方法， 该方法将在线程阻塞时抛出一个中断
+    * 不能检查stop，所 以线程不能终止，这个时候，我们就可以用interrupt()方法了：
+    * 我们在thread.stop = true;语句后调用thread.interrupt()方法， 该方法将在线程阻塞时抛出一个中断
     * 信号，该信号将被catch语句捕获到，一旦捕获到这个信号，线程就提前终结自己的阻塞状态，这
     * 样，它就能够 再次运行run 方法了，然后检查到stop = true，while循环就不会再被执行，在执
     * 行了while后面的清理工作之后，run方法执行完 毕，线程终止。

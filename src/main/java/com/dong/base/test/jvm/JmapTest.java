@@ -5,6 +5,7 @@ import com.dong.base.model.UserEntity;
 import java.io.IOException;
 
 /**
+ * https://www.cnblogs.com/sxdcgaq8080/p/11089664.html
  *
  * jmap命令:
  * jmap pid

@@ -1,15 +1,11 @@
 package com.dong.base.test.concurrent;
 
-import org.omg.PortableInterceptor.INACTIVE;
+import org.junit.Test;
 
-import java.sql.Time;
 import java.util.Random;
 import java.util.concurrent.*;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
 import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 /**
  * @author dongjunpeng
@@ -21,7 +17,7 @@ public class TestCompletableFuture {
     public static Executor executor = new ThreadPoolExecutor(3,5,5,TimeUnit.SECONDS,new LinkedBlockingQueue<>(100));
 
     public static void main(String[] args) throws Exception {
-        thenCompose();
+//        thenCompose();
 //        runAfterBoth();
 //        runAfterEither();
 //        applyToEither();
@@ -30,7 +26,7 @@ public class TestCompletableFuture {
 //        thenAccept();
 //        handle();
 //        thenApply();
-//        whenComplete();
+        whenComplete();
 //        System.out.println(supplyAsync());
 //        System.out.println(runAsync());
         TimeUnit.SECONDS.sleep(2);
@@ -319,6 +315,15 @@ public class TestCompletableFuture {
             }
         });
         System.out.println(result.get());
+
+
+     /*   CompletableFuture<String> combine = CompletableFuture.supplyAsync(() -> {
+            return "hello";
+        }).thenCombine(CompletableFuture.supplyAsync(() -> {
+            return "world !";
+        }), (f1, f2) -> {
+            return f1 + " " + f2;
+        });*/
     }
 
     /**
@@ -456,6 +461,25 @@ public class TestCompletableFuture {
         });
         TimeUnit.SECONDS.sleep(3);
 
+/*        CompletableFuture.supplyAsync(()->{
+            int radNum = new Random().nextInt();
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if(radNum%2==0){
+                int i = 12/0;
+            }
+            System.out.println("run end ....");
+            return radNum;
+        }).whenComplete((integer,throwable)->{
+            System.out.println("finally....执行完成！"+integer+throwable);
+        }).exceptionally(throwable->{
+            System.out.println("执行失败！ "+throwable.getMessage());
+            return null;
+        });*/
+
     }
 
 
@@ -474,6 +498,7 @@ public class TestCompletableFuture {
             }
             return System.currentTimeMillis();
         });
+        //future.join()
         return future.get();
     }
 

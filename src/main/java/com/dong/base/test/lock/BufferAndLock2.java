@@ -105,6 +105,11 @@ public class BufferAndLock2 {
 
 
     public static void main(String[] args) {
+        testMain();
+
+    }
+
+    public static void testMain(){
         BufferAndLock2 task = new BufferAndLock2();
 
         AddThread addThread = new AddThread(task);
@@ -116,6 +121,5 @@ public class BufferAndLock2 {
         for(int i=0;i<4;i++){
             new Thread(subThread,"sub线程"+i).start();
         }
-
     }
 }

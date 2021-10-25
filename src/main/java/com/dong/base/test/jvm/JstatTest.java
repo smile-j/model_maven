@@ -19,12 +19,20 @@ public class JstatTest {
         byte[] b2 = new byte[2*_1MB];
         System.out.println("2.....");
         System.in.read();
-        System.in.read();
 
         byte[] b3 = new byte[2*_1MB];
         System.out.println("3....");
         System.in.read();
 
+        byte[] b4 = new byte[2*_1MB];
+        System.out.println("4....");
+        System.in.read();
+        byte[] b5 = new byte[2*_1MB];
+        System.out.println("5....");
+        System.in.read();
+        byte[] b6 = new byte[2*_1MB];
+        System.out.println("6....");
+        System.in.read();
     }
 
 
