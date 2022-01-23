@@ -57,8 +57,10 @@ public class TestCollection {
     }
     @Test
     public void testConcurrent(){
-        ConcurrentMap concurrentMap = new ConcurrentHashMap();
-
+        ConcurrentMap<String,String> concurrentMap = new ConcurrentHashMap();
+        concurrentMap.put("ab","abc");
+        String ab = concurrentMap.get("ab");
+        System.out.println(ab);
 
     }
 

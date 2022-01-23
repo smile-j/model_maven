@@ -1,7 +1,6 @@
 package com.dong.base.util;
 
 import com.dong.base.model.InnerExample;
-import com.dong.base.model.Outer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +13,7 @@ import java.util.List;
 public class TestInner {
 
     public static void main(String [] args){
+
         InnerExample example = new InnerExample();
         example.name="OutClass";
 
