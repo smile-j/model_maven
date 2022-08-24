@@ -49,6 +49,7 @@ public class TestLambda3 {
     }
 
     //Function<T,R> 函数型接口
+    //Function是一个功能型的接口，用于将一种类型的数据转化为另外一种类型的数据。
     @Test
     public void test3(){
         String newStr=strHandler("\t\t\t\n哈哈哈，不错一天！",(str)->str.trim());
