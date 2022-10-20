@@ -3,6 +3,11 @@ package com.dong.base.test.io.buffer;
 import java.nio.ByteBuffer;
 
 /**
+ *  缓冲区分片
+ *  只读缓存区
+ *  直接缓存区
+ *  内存映射文件io
+ *
  *  Buffer 类他们都采用相似的方法进行管理数据，只是各自 管理的数据类型不同而已。都是通过如下方法获取一个 Buffer 对象：
  *
  * static XxxBuffer allocate(int capacity) : 创建一个容量为capacity 的 XxxBuffer 对象
@@ -24,20 +29,48 @@ public class BufferTest {
 
     public static void main(String[] args) {
         ByteBuffer buf = ByteBuffer.allocateDirect(1024);
-        String str = "hello";
+        String str = "发广告";
+        System.out.println("len:"+str.length());
         buf.put(str.getBytes());
         buf.flip();
         byte[] dst = new byte[2];//创建一个界限为limit大小的字节数组
-        ByteBuffer buffer = buf.get(dst);//批量将limit大小的字节写入到dst字节数组中
-        System.out.println(new String(dst, 0, dst.length));//结果为itheima
-        System.out.println("0------------------");
-        System.out.println(buffer.position());// 0: 表示当前的位置为0
+        buf.get(dst);//批量将limit大小的字节写入到dst字节数组中
+        System.out.println(new String(dst, 0, buf.position()));//结果为itheima
+        System.out.println(buf.position()+"<->"+buf.limit());
+        while (buf.hasRemaining()){
+//            System.out.println((char) buf.get());
+            System.out.println(buf.position()+"<->"+buf.limit());
+        }
+        buf.flip();
+        buf.clear();
+        //buf.compact()清楚已经读过的；clear清除所有的
+        System.out.println("before put");
+        System.out.println(buf.position());// 0: 表示当前的位置为0
+        System.out.println(buf.limit());// 1024: 表示界限为1024，前1024个位置是允许我们读写的
+        System.out.println(buf.capacity());//1024：表示容量大小为1024
+        buf.put("ghijkmn".getBytes());
+        System.out.println("after put");
+        System.out.println(buf.position());// 0: 表示当前的位置为0
+        System.out.println(buf.limit());// 1024: 表示界限为1024，前1024个位置是允许我们读写的
+        System.out.println(buf.capacity());//1024：表示容量大小为1024
+        buf.flip();
+        System.out.println("after read");
+        System.out.println(buf.position());// 0: 表示当前的位置为0
+        System.out.println(buf.limit());// 1024: 表示界限为1024，前1024个位置是允许我们读写的
+        System.out.println(buf.capacity());//1024：表示容量大小为1024
+        System.out.println("flip");
+        while (buf.hasRemaining()){
+            System.out.println((char) buf.get());
+            System.out.println(buf.position()+"<->"+buf.limit());
+        }
+        System.out.println("0-----=========================-------------");
+/*        System.out.println(buffer.position());// 0: 表示当前的位置为0
         System.out.println(buffer.limit());// 1024: 表示界限为1024，前1024个位置是允许我们读写的
         System.out.println(buffer.capacity());//1024：表示容量大小为1024
         System.out.println("----------------------------");
         System.out.println(buf.position());// 0: 表示当前的位置为0
         System.out.println(buf.limit());// 1024: 表示界限为1024，前1024个位置是允许我们读写的
-        System.out.println(buf.capacity());//1024：表示容量大小为1024
+        System.out.println(buf.capacity());//1024：表示容量大小为1024*/
 //        test1();
 //        test2();
 //        test3();
@@ -46,7 +79,8 @@ public class BufferTest {
 
     public static void test1(){
         //1. 分配一个指定大小的缓冲区
-        ByteBuffer buf = ByteBuffer.allocate(1024);
+//        ByteBuffer buf = ByteBuffer.allocate(1024);
+        ByteBuffer buf = ByteBuffer.allocateDirect(1024);//直接缓存区域，加快io的速度
         System.out.println("-----------------allocate()----------------");
         System.out.println(buf.position());// 0: 表示当前的位置为0
         System.out.println(buf.limit());// 1024: 表示界限为1024，前1024个位置是允许我们读写的

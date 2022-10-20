@@ -3,6 +3,8 @@ package com.dong.base.test.io.channel;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class FileChannelDemo1 {
 
@@ -12,7 +14,7 @@ public class FileChannelDemo1 {
      */
     public static void main(String[] args) throws Exception {
         testRead();
-        testWrite();
+//        testWrite();
 
     }
 
@@ -20,7 +22,7 @@ public class FileChannelDemo1 {
         RandomAccessFile randomAccessFile = new RandomAccessFile("D:\\FFOutput\\1.txt", "rw");
         FileChannel fileChannel = randomAccessFile.getChannel();
         ByteBuffer buffer = ByteBuffer.allocate(1024);
-        String newData ="hello 11";
+        String newData ="hello 11 地方";
         buffer.clear();
 
         buffer.put(newData.getBytes());
@@ -34,6 +36,8 @@ public class FileChannelDemo1 {
     }
 
     public static void testRead() throws Exception {
+        String fileName ="";
+//        FileChannel channel = FileChannel.open(Paths.get(fileName), StandardOpenOption.READ);
         RandomAccessFile randomAccessFile = new RandomAccessFile("D:\\FFOutput\\1.txt", "rw");
         FileChannel fileChannel = randomAccessFile.getChannel();
         ByteBuffer buffer = ByteBuffer.allocate(1024);
