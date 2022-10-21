@@ -10,11 +10,30 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.text.MessageFormat;
+import java.util.UUID;
 
 public class ChannelTest {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws Exception {
+//        String path = String.format("D://%s.txt", UUID.randomUUID().toString());
+        String path = String.format("D://1.txt", UUID.randomUUID().toString());
+        RandomAccessFile randomAccessFile = new RandomAccessFile(path, "rw");
+        FileChannel fileChannel = randomAccessFile.getChannel();
+        File file = new File(path);
+//        if(!file.exists()){
+//            file.createNewFile();
+////            file.createNewFile(); 文件
+////            file.mkdir(); 目录
+//        }
+        //文件必须存在
+//        FileChannel fileChannel = FileChannel.open(Paths.get(path),StandardOpenOption.WRITE);
+//        fileChannel.write(Charset.forName("UTF-8").encode("hello 你好"));
+        fileChannel.write(ByteBuffer.wrap("hello 你好".getBytes()));
+        System.out.println(path);
+        fileChannel.close();
     }
 
     @SneakyThrows
@@ -116,6 +135,8 @@ public class ChannelTest {
         // 1、字节输入管道
         FileInputStream is = new FileInputStream("E:\\test\\Aurora-4k.jpg");
         FileChannel isChannel = is.getChannel();
+//        FileChannel fileChannel = FileChannel.open(Paths.get("E:\\test\\Aurora-4k.jpg"), StandardOpenOption.WRITE);
+
         // 2、字节输出流管道
         FileOutputStream fos = new FileOutputStream("E:\\test\\Aurora-4knew3.jpg");
         FileChannel osChannel = fos.getChannel();

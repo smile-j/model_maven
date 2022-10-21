@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
+import java.nio.charset.Charset;
 import java.util.Iterator;
 
 /**
@@ -81,14 +82,19 @@ public class Server {
             ByteBuffer buffer = ByteBuffer.allocate(1024);
             int count = channel.read(buffer);
             //根据count的值做处理
-            if(count > 0) {
+            StringBuilder stringBuilder = new StringBuilder();
+            while (count > 0) {
+                buffer.flip();
                 //把缓存区的数据转成字符串
-                String msg = new String(buffer.array());
-                //输出该消息
-                System.out.println("来自客户端---> " + msg);
-                //向其它的客户端转发消息(去掉自己), 专门写一个方法来处理
-                sendInfoToOtherClients(msg, channel);
+               stringBuilder.append( new String(buffer.array()));
+//                String msg = Charset.forName("UTF-8").decode(buffer);
+                count = channel.read(buffer);
             }
+            String msg = stringBuilder.toString();
+            //输出该消息
+            System.out.println("来自客户端---> " + msg);
+            //向其它的客户端转发消息(去掉自己), 专门写一个方法来处理
+            sendInfoToOtherClients(msg, channel);
         }catch (IOException e) {
             try {
                 System.out.println(channel.getRemoteAddress() + " 离线了..");
@@ -116,9 +122,11 @@ public class Server {
                 //转型
                 SocketChannel dest = (SocketChannel)targetChannel;
                 //将msg 存储到buffer
-                ByteBuffer buffer = ByteBuffer.wrap(msg.getBytes());
+//                ByteBuffer buffer = ByteBuffer.wrap(msg.getBytes());
+//                ByteBuffer buffer = ByteBuffer.wrap(Charset.forName("UTF-8").encode(msg).array());
                 //将buffer 的数据写入 通道
-                dest.write(buffer);
+//                dest.write(buffer);
+                dest.write(Charset.forName("UTF-8").encode(msg));
             }
         }
     }

@@ -6,6 +6,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -36,7 +37,8 @@ public class Client {
     public void sendInfo(String info) {
         info = username + " 说：" + info;
         try {
-            socketChannel.write(ByteBuffer.wrap(info.getBytes()));
+//            socketChannel.write(ByteBuffer.wrap(info.getBytes()));
+            socketChannel.write(Charset.forName("UTF-8").encode(info));
         }catch (IOException e) {
             e.printStackTrace();
         }

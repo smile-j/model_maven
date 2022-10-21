@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
 import java.nio.channels.CompletionHandler;
+import java.nio.channels.FileChannel;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
@@ -24,6 +25,7 @@ public class AsynFileDemo {
 
     private static void write2() throws IOException{
         Path path = Paths.get("D:\\2.txt");
+//        FileChannel open = FileChannel.open(path, StandardOpenOption.WRITE);
         AsynchronousFileChannel fileChannel = AsynchronousFileChannel.open(path,StandardOpenOption.WRITE);
 
         ByteBuffer buffer = ByteBuffer.allocate(1024);
