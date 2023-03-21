@@ -37,7 +37,7 @@ public class TestStreamAPI2 {
     public void testGroup(){
 
         Collection<Integer> intersection = CollectionUtils.intersection(Sets.newHashSet(1, 2), Sets.newHashSet(4, 5, 3));
-        System.out.println("=============>"+ JSON.toJSONString(intersection.s));
+        System.out.println("=============>"+ JSON.toJSONString(intersection));
 
 
         List<DeptVo> deptVos = null;
