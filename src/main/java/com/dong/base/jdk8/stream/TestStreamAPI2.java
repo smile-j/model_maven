@@ -35,6 +35,8 @@ public class TestStreamAPI2 {
     //分组
     @Test
     public void testGroup(){
+        Map<Integer, Integer> totalNumEntriesByCity = emps.stream().collect(Collectors.groupingBy(Employee::getId,Collectors.summingInt(Employee::getAge)));
+
 
         Collection<Integer> intersection = CollectionUtils.intersection(Sets.newHashSet(1, 2), Sets.newHashSet(4, 5, 3));
         System.out.println("=============>"+ JSON.toJSONString(intersection));
