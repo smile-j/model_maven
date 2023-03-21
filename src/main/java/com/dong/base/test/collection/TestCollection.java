@@ -40,11 +40,16 @@ public class TestCollection {
         WeakReference<String> sr = new WeakReference<String>(new String("hello"));
 //            ReferenceQueue<String> sr = new ReferenceQueue<String>();
 
-
-
+        ThreadLocal<String> local = new ThreadLocal<>();
+        ThreadLocal<String> local2 = new ThreadLocal<>();
+        local.set("234");
+        local2.set("567");
         System.out.println(sr.get());
+        System.out.println(local.get());
         System.gc();                //通知JVM的gc进行垃圾回收
+        System.out.println("垃圾回收..........");
         System.out.println(sr.get());
+        System.out.println(local2.get());
     }
 
     @Test

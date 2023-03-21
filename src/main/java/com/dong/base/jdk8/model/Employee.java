@@ -1,10 +1,13 @@
 package com.dong.base.jdk8.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
  * Created by Administrator on 2017/11/14.  Serializable
  */
+@Data
 public class Employee implements Serializable {
 
     private Integer id;
@@ -49,13 +52,6 @@ public class Employee implements Serializable {
         return true;
     }
 
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
 
     public Employee(Integer id, String name, Integer age, double salary, Status status) {
         this.id = id;
@@ -91,32 +87,6 @@ public class Employee implements Serializable {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.salary = salary;
-    }
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
         this.salary = salary;
     }
 

@@ -1,17 +1,174 @@
 package com.dong;
 
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.collect.Lists;
+import lombok.SneakyThrows;
+import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main {
 
+
+    public static String getMaxSameString(String str1, String str2) {
+        if (str1 != null && str2 != null) {
+            String maxString = (str1.length() >= str2.length()) ? str1 : str2;
+            String minString = (str1.length() < str2.length()) ? str1 : str2;
+
+            int length = minString.length();
+            for (int i = 0; i < length; i++) {
+                for (int x = 0, y = length - i; y <= length; x++, y++) {//此处选length是因为左闭右开
+                    String subStr = minString.substring(x, y);
+                    if (maxString.contains(subStr)) {
+                        return subStr;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    public static String test111(String s,List<String> list){
+        String ss = list.stream().filter(e-> StringUtils.isNotBlank(getMaxSameString(s,e))).findFirst().orElse(null);
+        return StringUtils.isNotBlank(ss)?getMaxSameString(ss,s):null;
+    }
+
+    public static String test11(String s,List<List<String>> list,int num ){
+        if(num==list.size()){
+            System.out.println("=========>>"+s);
+            return s;
+        }
+        for(int i = num;i<list.size();i++){
+            for(int j=0;j<list.get(i).size();j++){
+                return test111(s,list.get(i));
+            }
+        }
+        return null;
+    }
+    //获取list之间的交集
+    public static boolean getIntersectionStr(List<List<String>> list ){
+        List<String> firtList = list.get(0);
+        for(int j=0;j<firtList.size();j++){
+            String fistStr = firtList.get(j);
+            for(int i=1;i<list.size();i++){
+                for(int ii=0;ii<list.get(i).size();ii++){
+                    String sf = getMaxSameString(fistStr,list.get(i).get(ii));
+                    if(StringUtils.isNotBlank(sf)){
+                        String sd = test11(sf,list,i+1);
+                        if(StringUtils.isNotBlank(sd)){
+                            System.out.println("---->"+sd);
+                            return true;
+                        }else {
+                            continue;
+                        }
+                    }else {
+                        fistStr = null;
+                        break;
+                    }
+                }
+                if(StringUtils.isBlank(fistStr)){
+                    break;
+
+                }
+            }
+            if(StringUtils.isNotBlank(fistStr)){
+                return true;
+            }
+
+        }
+        return true;
+    }
+
+
+    public static  boolean getIntersectionStr2(List<List<String>> list){
+        List<String> firtList = list.get(0);
+        for (int i=0;i<firtList.size();i++) {
+           String res =  getIntersectionStr2Iner(firtList.get(i),list,1);
+           if(StringUtils.isNotBlank(res)){
+               return true;
+           }
+        }
+        return false;
+
+    }
+    public static String getIntersectionStr2Iner(String str ,List<List<String>> list,int num ){
+        if(num == list.size()){
+            return str;
+        }
+        for (int index = num;index<list.size();index++){
+            List<String> twoList = list.get(num);
+            String twoStr = new String(str);
+            for (int i=0;i<twoList.size();i++) {
+                String maxSameString = getMaxSameString(twoStr, twoList.get(i));
+                if(StringUtils.isNotBlank(maxSameString)){
+                    String res =  getIntersectionStr2Iner(maxSameString,list,num+1);
+                    if(StringUtils.isNotBlank(res)){
+                        return res;
+                    }
+                }else {
+                    continue;
+                }
+            }
+        }
+        return null;
+
+    }
+
+    public static long getDValue2Day(Date start, Date end) {
+        long dValue = 0;
+        try {
+            long l = end.getTime() - start.getTime();
+            dValue = l / (24 * 60 * 60 * 1000);
+        } catch (Exception e) {
+        }
+        return dValue;
+    }
+
+    @SneakyThrows
     public static void main(String[] args) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println(getDValue2Day(format.parse("2022-01-02"),format.parse("2022-01-02")));
+
+        List<String> set1 = Lists.newArrayList("ac","hc","cde","deff");
+        List<String> set2 = Lists.newArrayList("ec","ae","ab","edde");
+        List<String> set3 = Lists.newArrayList("gd","bb","ded","f");
+
+        List<List<String>> tlist = Lists.newArrayList(set1,set2,set3);
+        System.out.println("111------->  "+getIntersectionStr(tlist));
+        System.out.println("222------->  "+getIntersectionStr2(tlist));
+
+
+
+
+        int i=10,j=10;
+        for(;i>0;i--){
+            System.out.println("i:"+i);
+            for (j=10;j>0;j--){
+                System.out.println(i+"======"+j);
+                if(j==3)break;
+            }
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        String s = new String("早上");
+        System.out.println(s.hashCode());
+        System.out.println(s.length());
+
+        int num =10;
+        System.out.println(num+(num>>1));
+
+        HashMap<String,String> map = new HashMap<>();
+        map.put("","");
+        map.get("");
+        ConcurrentHashMap<String,String> concurrentHashMap = new ConcurrentHashMap<>();
+        concurrentHashMap.put("","");
+        concurrentHashMap.size();
+
         //最大数
 //        System.out.println(largestNumber(new int[]{9,12,13,2}));
 //        System.out.println(largestNumber(new int[]{1,0,0,0}));

@@ -1,12 +1,15 @@
 package com.dong.base.jdk8.stream;
 
+import com.alibaba.fastjson.JSON;
+import com.dong.base.jdk8.model.DeptVo;
 import com.dong.base.jdk8.model.Employee;
+import com.google.common.collect.Sets;
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -23,10 +26,33 @@ public class TestStreamAPI2 {
             new Employee(102, "李四", 59, 5555.55),
             new Employee(103, "王五", 28, 3333.33),
             new Employee(104, "赵六", 36, 7777.77),
-            new Employee(105, "田七", 12, 8888.88),
-            new Employee(105, "田七", 12, 8888.88),
-            new Employee(105, "田七", 12, 8888.88)
+            new Employee(105, "田七1", 12, 8888.88),
+            new Employee(106, "田七2", 12, 8888.88),
+            new Employee(107, "田七4", 12, 8888.88),
+            new Employee(108, "aa", 36, 8888.88),
+            new Employee(109, "bb", 28, 8888.88)
     );
+    //分组
+    @Test
+    public void testGroup(){
+
+        Collection<Integer> intersection = CollectionUtils.intersection(Sets.newHashSet(1, 2), Sets.newHashSet(4, 5, 3));
+        System.out.println("=============>"+ JSON.toJSONString(intersection.s));
+
+
+        List<DeptVo> deptVos = null;
+        List<Employee> collect5 = deptVos.stream().flatMap(e -> e.getUsers().stream()).collect(Collectors.toList());
+
+        Map<Integer, List<Employee>> collect = emps.stream().collect(Collectors.groupingBy(Employee::getAge));
+
+        Map<Integer, List<Integer>> collect4 = emps.stream().collect(Collectors.groupingBy(Employee::getAge, Collectors.mapping(Employee::getId, Collectors.toList())));
+
+        Map<Integer, Employee> collect1 = emps.stream().collect(Collectors.toMap(Employee::getId, Function.identity()));
+        Map<Integer, Employee> collect2 = emps.stream().collect(Collectors.toMap(Employee::getId, Function.identity(),(v1,v2)->v1));
+        Map<Integer, String> collect3 = emps.stream().collect(Collectors.toMap(Employee::getId, Employee::getName));
+
+
+    }
 
     //中间操作
     /**
