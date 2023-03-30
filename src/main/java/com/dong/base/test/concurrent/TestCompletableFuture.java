@@ -14,7 +14,7 @@ import java.util.function.*;
  */
 public class TestCompletableFuture {
 
-    public static Executor executor = new ThreadPoolExecutor(3,5,5,TimeUnit.SECONDS,new LinkedBlockingQueue<>(100));
+    public static Executor poolExecutor = new ThreadPoolExecutor(3,5,5,TimeUnit.SECONDS,new LinkedBlockingQueue<>(100));
 
     public static void main(String[] args) throws Exception {
 //        thenCompose();
@@ -26,7 +26,7 @@ public class TestCompletableFuture {
 //        thenAccept();
 //        handle();
 //        thenApply();
-        whenComplete();
+//        whenComplete();
 //        System.out.println(supplyAsync());
 //        System.out.println(runAsync());
         TimeUnit.SECONDS.sleep(2);
@@ -401,7 +401,8 @@ public class TestCompletableFuture {
      * U：当前任务的返回值类型
      *
      */
-    public static void thenApply()throws Exception{
+    @Test
+    public  void thenApply()throws Exception{
 
         CompletableFuture<String> future = CompletableFuture.supplyAsync(new Supplier<Long>() {
             @Override
@@ -433,7 +434,8 @@ public class TestCompletableFuture {
      *  public CompletableFuture<T> exceptionally(Function<Throwable,? extends T> fn)
      *
      */
-    public static void whenComplete()throws Exception{
+    @Test
+    public  void whenComplete()throws Exception{
         CompletableFuture<Void> future = CompletableFuture.runAsync(()->{
             try {
                 TimeUnit.SECONDS.sleep(2);
@@ -443,19 +445,18 @@ public class TestCompletableFuture {
             if(new Random().nextInt()%2==0){
                 int i = 12/0;
             }
-            System.out.println("run end ....");
+            System.out.println(Thread.currentThread().getName()+" run end ....");
 
-        });
+        },poolExecutor);
         future.whenComplete(new BiConsumer<Void, Throwable>() {
             @Override
             public void accept(Void unused, Throwable throwable) {
-                System.out.println("finally....执行完成！");
+                System.out.println(Thread.currentThread().getName()+" finally....执行完成！");
             }
-        });
-        future.exceptionally(new Function<Throwable, Void>() {
+        }).exceptionally(new Function<Throwable, Void>() {
             @Override
             public Void apply(Throwable throwable) {
-                System.out.println("执行失败！ "+throwable.getMessage());
+                System.out.println(Thread.currentThread().getName()+" 执行失败！ "+throwable.getMessage());
                 return null;
             }
         });
@@ -484,14 +485,17 @@ public class TestCompletableFuture {
 
 
     /**
-     * 2. 有返回值
-     * runAsync(Runnable runnable)
-     *  runAsync(Runnable runnable, Executor executor)
+     * 1. 有返回值
+     *
+     * supplyAsync(Supplier<U> supplier)
+     *  supplyAsync(Supplier<U> supplier, Executor executor)
      */
 
-    public static Object supplyAsync() throws ExecutionException, InterruptedException {
+    @Test
+    public void supplyAsync() throws ExecutionException, InterruptedException {
         CompletableFuture<Long> future = CompletableFuture.supplyAsync(()->{
             try {
+                System.out.println(Thread.currentThread().getName()+"等待2秒");
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -499,16 +503,16 @@ public class TestCompletableFuture {
             return System.currentTimeMillis();
         });
         //future.join()
-        return future.get();
+        System.out.println(Thread.currentThread().getName()+"....end " + future.get());
     }
 
     /**
-     * 1. 无返回值
-     *
-     * supplyAsync(Supplier<U> supplier)
-     *  supplyAsync(Supplier<U> supplier, Executor executor)
+     *  2. 无返回值
+     *      * runAsync(Runnable runnable)
+     *      *  runAsync(Runnable runnable, Executor executor)
      */
-    public static Object runAsync() throws ExecutionException, InterruptedException {
+    @Test
+    public  void runAsync() throws ExecutionException, InterruptedException {
         CompletableFuture<Void> future = CompletableFuture.runAsync(()->{
             try {
                 TimeUnit.SECONDS.sleep(2);
@@ -517,7 +521,8 @@ public class TestCompletableFuture {
             }
             System.out.println(".....run end.");
         });
-        return future.get();
+//        return future.get();
+        System.out.println(future.get());
     }
 
 }

@@ -3,6 +3,10 @@ package com.dong.base.test.guava;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 并发工具类
+ *
+ */
 public class TestCompletableFuture {
 
     public static void main(String[] args) {
