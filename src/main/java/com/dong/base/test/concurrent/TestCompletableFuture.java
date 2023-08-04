@@ -409,14 +409,25 @@ public class TestCompletableFuture {
             public Long get() {
                 long result = new Random().nextInt(100);
 //                int qq =1/0;
-                System.out.println("result:"+result);
+                try {
+                    TimeUnit.SECONDS.sleep(2);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+" result:"+result);
+
                 return result;
             }
         }).thenApply(new Function<Long, String>() {
             @Override
             public String apply(Long aLong) {
                 long result = aLong*5;
-                System.out.println("result2:"+result);
+                try {
+                    TimeUnit.SECONDS.sleep(2);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+" result2:"+result);
                 return result+"--haha";
             }
         });

@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
+import java.sql.SQLOutput;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -144,6 +145,37 @@ public class TestCollection {
         set.add(new Person(3,"cc"));
         set.add(new Person(1,"dd"));
         set.forEach(System.out::println);
+    }
+
+    @Test
+    public void testWeak(){
+
+        try {
+            Map<WeakReference<Integer>, WeakReference<Integer>> map = new HashMap<>(8);
+            // 注意这里~
+            Integer wKey = new Integer(1111);
+            Integer wVal = new Integer(1231);
+            WeakReference<Integer> key = new WeakReference<>(wKey);
+            WeakReference<Integer> value = new WeakReference<>(wVal);
+            map.put(key,value);
+            System.out.println("put success");
+            Thread.sleep(1000);
+//            wKey = null;
+            System.gc();
+            System.out.println("key:"+key.get());
+            System.out.println("value:"+value.get());
+            System.out.println("get " + map.get(key).get());
+            System.out.println("===============================================");
+            String str = new String("abcdef");
+            WeakReference<String> objWeak = new WeakReference<>(str);
+            str = null;
+            System.out.println(objWeak.get());
+            System.gc();
+            System.out.println(objWeak.get());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 }
