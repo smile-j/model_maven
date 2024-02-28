@@ -1,16 +1,36 @@
 package com.dong.base.jdk8.timeDate;
 
+import org.apache.commons.lang3.BooleanUtils;
 import org.junit.Test;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
 import java.util.Set;
 
 /**
  * Created by Administrator on 2017/11/19.
  */
 public class TestLocalDateTime {
+
+    /**
+     * 字符串转LocalDateTime
+     */
+    @Test
+    public void test9(){
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+        //格式化:日期-->字符串
+        LocalDateTime localDateTime = LocalDateTime.now();
+        String str1 = formatter.format(localDateTime);
+        System.out.println(localDateTime);
+        System.out.println(str1);//2019-02-18T15:42:18.797
+
+        //解析：字符串 -->日期
+        TemporalAccessor parse = formatter.parse("2019-02-18T15:42:18.797");
+        System.out.println(parse);
+    }
 
     //ZoneDate ZoneDTime ZoneDateTime
     @Test
@@ -34,6 +54,7 @@ public class TestLocalDateTime {
     @Test
     public void test6(){
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+//        DateTimeFormatter.ISO_DATE;DateTimeFormatter.ISO_DATE_TIME
         LocalDateTime ldt = LocalDateTime.now();
 
         String strDate = ldt.format(dateTimeFormatter);
@@ -134,6 +155,12 @@ public class TestLocalDateTime {
 
         Instant instant2 = Instant.ofEpochSecond(60);
         System.out.println(instant2);
+
+        Date date = new Date();
+        Instant instant = date.toInstant();
+        LocalDate localDate = instant.atZone(ZoneId.systemDefault()).toLocalDate();
+//        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
     }
 
     //1. LocalDate LocalTime LocalDateTime
@@ -141,6 +168,8 @@ public class TestLocalDateTime {
     public void test1(){
         LocalDateTime ldt = LocalDateTime.now();
         System.out.println(ldt);
+        DayOfWeek dayOfWeek = ldt.getDayOfWeek();
+        boolean flag = dayOfWeek == DayOfWeek.SATURDAY || dayOfWeek == DayOfWeek.SUNDAY;
 
         LocalDateTime ldt2 = LocalDateTime.of(2015, 10, 19, 22, 33);
         System.out.println(ldt2);
