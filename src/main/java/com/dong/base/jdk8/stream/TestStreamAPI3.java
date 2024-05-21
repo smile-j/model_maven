@@ -4,6 +4,7 @@ import com.dong.base.jdk8.model.Employee;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -65,6 +66,9 @@ public class TestStreamAPI3 {
                     }
                 })));
 
+        emps.stream().collect(Collectors.toMap(Employee::getStatus
+                ,entry-> Arrays.stream(entry.getName().split(","))
+                        .collect(Collectors.toMap(e->e.length(), Function.identity()))));
         System.out.println(map);
     }
 

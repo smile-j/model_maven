@@ -22,7 +22,14 @@ public class RedissonLock {
         boolean isLock;
         try {
             //尝试获取分布式锁
-            isLock = disLock.tryLock(500, 15000, TimeUnit.MILLISECONDS);
+            //tryTime 秒之后停止重试加锁，返回false
+            //具有 Watch Dog 自动延期机制，默认续30s 每隔30/3=10 秒续到30
+            long tryTime = 500;
+            isLock = disLock.tryLock();
+            isLock = disLock.tryLock(tryTime, TimeUnit.MILLISECONDS);
+            isLock = disLock.tryLock(tryTime, 15000, TimeUnit.MILLISECONDS);
+            //只有 leaseTime(默认-1) 等于 -1 时，才具有 Watch Dog 自动延期机制，默认续30s 每隔30/3=10 秒续到30s
+            boolean locked3 = disLock.tryLock(tryTime, -1,  TimeUnit.MILLISECONDS);
             if (isLock) {
                 System.out.println("获取lock 开始执行业务代码");
                 //TODO if get lock success, do something;

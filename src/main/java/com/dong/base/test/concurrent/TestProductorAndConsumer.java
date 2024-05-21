@@ -1,10 +1,5 @@
 package com.dong.base.test.concurrent;
 
-import sun.awt.windows.ThemeReader;
-
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 /**
  * Created by Administrator on 2018/2/6.
  */
