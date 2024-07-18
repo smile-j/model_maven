@@ -66,9 +66,12 @@ public class TestStreamAPI3 {
                     }
                 })));
 
-        emps.stream().collect(Collectors.toMap(Employee::getStatus
-                ,entry-> Arrays.stream(entry.getName().split(","))
-                        .collect(Collectors.toMap(e->e.length(), Function.identity()))));
+        Map<Employee.Status, Map<Integer, String>> collect1 = emps.stream().collect(Collectors.toMap(Employee::getStatus
+                , entry -> Arrays.stream(entry.getName().split(","))
+                        .collect(Collectors.toMap(e -> e.length(), Function.identity()))));
+
+        Map<Employee.Status, Map<Integer, Employee>> collect = emps.stream().collect(Collectors.groupingBy(Employee::getStatus
+                , Collectors.toMap(Employee::getId, Function.identity())));
         System.out.println(map);
     }
 
