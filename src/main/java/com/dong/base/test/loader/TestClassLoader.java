@@ -1,17 +1,9 @@
 package com.dong.base.test.loader;
 
-import com.mysql.jdbc.Driver;
 import org.junit.Test;
-import sun.net.spi.nameservice.dns.DNSNameService;
 
-import java.io.FileInputStream;
-import java.lang.reflect.Method;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -54,10 +46,10 @@ public class TestClassLoader {
 
     @Test
     public void testRootBoot(){
-        System.out.println(Object.class.getClassLoader());// null
-        System.out.println(String.class.getClassLoader());// null
-        System.out.println(DNSNameService.class.getClassLoader());//sun.misc.Launcher$ExtClassLoader@7a9664a1
-        System.out.println(Driver.class.getClassLoader());// sun.misc.Launcher$AppClassLoader@43be2d65
+//        System.out.println(Object.class.getClassLoader());// null
+//        System.out.println(String.class.getClassLoader());// null
+//        System.out.println(DNSNameService.class.getClassLoader());//sun.misc.Launcher$ExtClassLoader@7a9664a1
+//        System.out.println(Driver.class.getClassLoader());// sun.misc.Launcher$AppClassLoader@43be2d65
     }
 
 
