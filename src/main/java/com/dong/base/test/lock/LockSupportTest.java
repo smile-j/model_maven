@@ -35,6 +35,7 @@ public class LockSupportTest {
        }
     }
 
+    @Test
     public void testLockSupport() throws Exception {
         final Object obj = new Object();
         Thread A = new Thread(new Runnable() {
@@ -44,14 +45,24 @@ public class LockSupportTest {
                 for(int i=0;i<10;i++){
                     sum+=i;
                 }
+                try {
+                    Thread.sleep(1000);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName()+"---->res:"+sum);
                 LockSupport.park();
-                System.out.println(sum);
-            }
+                System.out.println(Thread.currentThread().getName()+"--last---->res:"+sum);            }
         });
         A.start();
+//        LockSupport.unpark(A);
         //睡眠一秒钟，保证线程A已经计算完成，阻塞在wait方法
-        //Thread.sleep(1000);
+        System.out.println(Thread.currentThread().getName()+"..sleep");
+        Thread.sleep(2000);
+        System.out.println(Thread.currentThread().getName()+"..sleep over");
         LockSupport.unpark(A);
+        A.join();
+
     }
 
 

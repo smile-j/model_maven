@@ -109,8 +109,5 @@ public class Test_Predicate {
 
     }
 
-    @Test
-    public void testGuavaPredicate(){
 
-    }
 }
