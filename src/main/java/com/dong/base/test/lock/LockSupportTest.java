@@ -60,7 +60,7 @@ public class LockSupportTest {
         System.out.println(Thread.currentThread().getName()+"..sleep");
         Thread.sleep(2000);
         System.out.println(Thread.currentThread().getName()+"..sleep over");
-        LockSupport.unpark(A);
+//        LockSupport.unpark(A);
         A.join();
 
     }

@@ -128,8 +128,36 @@ public class Main {
         return dValue;
     }
 
+    public static int fib(int count){
+        if( count==1) return 0;
+        if (count==2) return 1;
+        return fib(count-1)+fib(count-2);
+    }
+
+    public static int fib2(int count){
+
+        int firstTerm = 0, secondTerm = 1;
+
+        System.out.print("The first " + count + " numbers in the Fibonacci sequence are: ");
+
+        for (int i = 1; i <= count; ++i) {
+            System.out.print(firstTerm + " ");
+
+            // 计算下一个项
+            int nextTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+            secondTerm = nextTerm;
+        }
+        return 0;
+    }
+
     @SneakyThrows
     public static void main(String[] args) {
+        System.out.println(fib(10));
+        fib2(10);
+        System.out.println();
+        System.out.println();
+        System.out.println();
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         System.out.println(getDValue2Day(format.parse("2022-01-02"),format.parse("2022-01-02")));
 

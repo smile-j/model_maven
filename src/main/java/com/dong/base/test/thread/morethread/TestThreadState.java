@@ -15,8 +15,34 @@ public class TestThreadState {
     public static Object lock = new Object();
 
     public static void main(String[] args) throws InterruptedException {
-        testWaiting02();
+
+//        testNotifySleep();
+        testWaiting01();
 //        testBlocked();
+    }
+
+    public static void testNotifySleep(){
+        Object obj = new Object();
+        Thread t1 = new Thread(()->{
+          try {
+              TimeUnit.SECONDS.sleep(3);
+          }catch (Exception e){
+              System.out.println("..sleep exception:");
+              e.printStackTrace();
+          }
+        });
+        t1.start();
+
+        synchronized (obj){
+            obj.notifyAll();
+        }
+        System.out.println("唤起线程");
+        try {
+            TimeUnit.SECONDS.sleep(6);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("............end....");
     }
 
     public static void testTerminated(){
@@ -117,7 +143,8 @@ public class TestThreadState {
                     list.add(i);
                 }
             }
-        });
+            System.out.println(Thread.currentThread().getName()+".......end");
+        },"t_1");
         t1.start();
         System.out.println("1...t1 state:"+t1.getState());
         System.out.println("1...main state:"+Thread.currentThread().getState());
